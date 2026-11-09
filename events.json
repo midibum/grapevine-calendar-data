@@ -1,5 +1,5 @@
 {
-  "count": 86,
+  "count": 87,
   "events": [
     {
       "category": "Festival",
@@ -1019,6 +1019,21 @@
       "town": "Franklin"
     },
     {
+      "id": "fb-grace-good-tidings-holiday-market-2026",
+      "title": "Grace and Good Tidings Holiday Market",
+      "short": "Discover an Old World Christmas market in the village of Sedley, with local merchants, makers, artisans, and specialty vendors.",
+      "date": "2026-12-05",
+      "time": "10:00 AM - 2:00 PM",
+      "town": "Sedley",
+      "place": "Grace Memorial United Methodist Church, 31036 Peachtree Avenue, Sedley, VA 23878",
+      "organizer": "Grace Memorial United Methodist Church",
+      "category": "Market",
+      "desc": "Discover an Old World Christmas Market in the Village of Sedley, featuring local merchants, makers, artisans, and specialty vendors. Indoor and Outdoor Market. Enjoy warm winter treats in the Winterhaus, under the pavilion.",
+      "details": "Indoor and Outdoor Market. Enjoy warm winter treats in the Winterhaus, under the pavilion. Grace Memorial United Methodist Church was a 2026 Tidewater News Hometown Choice Awards finalist for Best Church.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0495ee98d4b0.jpg",
+      "sourceName": "Grace Memorial United Methodist Church (Facebook)"
+    },
+    {
       "category": "Arts & Culture",
       "contact": "Send an Email link on the Chamber listing (no address shown)",
       "cost": "See organizer",
@@ -1375,6 +1390,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-09T15:20:04Z",
+  "updated": "2026-11-09T15:24:09Z",
   "version": 2
 }
