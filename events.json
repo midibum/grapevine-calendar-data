@@ -1,5 +1,5 @@
 {
-  "count": 88,
+  "count": 89,
   "events": [
     {
       "category": "Festival",
@@ -620,6 +620,21 @@
       "time": "10:00 AM",
       "title": "Thanksgiving Food Drive",
       "town": "Ivor"
+    },
+    {
+      "id": "fb-pictures-with-santa-paws-2026",
+      "title": "Pictures with Santa Paws",
+      "short": "Bring your pet for a photo with Santa, hosted by Southampton Boarding and Grooming.",
+      "date": "2026-11-20",
+      "time": "5:00 PM - 7:30 PM",
+      "town": "Franklin",
+      "place": "Southampton Boarding and Grooming, 26292 Delaware Rd, Franklin, VA 23851",
+      "organizer": "Southampton Boarding and Grooming",
+      "category": "Community",
+      "desc": "Santa Paws is coming to town! Bring your pet for pictures with Santa, hosted by Southampton Boarding and Grooming. Photo packages will be available for purchase.",
+      "details": "Photos by April Renee' Photography. Photo packages available for purchase.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/4c1f1ded7ae9.jpg",
+      "sourceName": "Southampton Veterinary Clinic PC (Facebook)"
     },
     {
       "category": "Arts & Culture",
@@ -1406,6 +1421,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-09T15:28:17Z",
+  "updated": "2026-11-09T15:37:07Z",
   "version": 2
 }
