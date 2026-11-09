@@ -1,5 +1,5 @@
 {
-  "count": 87,
+  "count": 88,
   "events": [
     {
       "category": "Festival",
@@ -430,6 +430,22 @@
       "details": "Annual Saturday Showcase with artisans, vendors, boutiques, and more. Come shop, explore, and support local businesses, and stay for lunch.",
       "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b074ad7f3a5b.jpg",
       "sourceName": "The Hubs Vine (Facebook)"
+    },
+    {
+      "id": "fb-redds-oyster-fest-2026",
+      "title": "Redd's Oyster Fest | Ft. Hickory Knoll + Vince Lee",
+      "short": "Oysters, cold drinks, and live music at Redd's Filling Station in Windsor.",
+      "date": "2026-11-14",
+      "time": "3:00 PM - 6:00 PM",
+      "town": "Windsor",
+      "place": "Redd's Filling Station, 20 W Windsor Blvd, Windsor, VA",
+      "organizer": "Redd's Filling Station",
+      "category": "Festival",
+      "cost": "$71.21",
+      "desc": "Join us on November 14th for Oyster Fest, a day of oysters, cold drinks, live music, and plenty of good times at Redd's Filling Station. Live music featuring Hickory Knoll + Vince Lee.",
+      "details": "Tickets include unlimited oysters, hush puppies, chili, hot dogs, and 2 drink tickets. Tickets $71.21 via Eventbrite: https://www.eventbrite.com/e/redds-oyster-fest-tickets-2003918542304",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b772774995fb.jpg",
+      "sourceName": "Redd's Filling Station (Facebook)"
     },
     {
       "category": "Community",
@@ -1390,6 +1406,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-09T15:24:09Z",
+  "updated": "2026-11-09T15:28:17Z",
   "version": 2
 }
