@@ -912,16 +912,17 @@
       "category": "Festivals & Celebrations",
       "cost": "FREE (per poster)",
       "date": "2026-12-03",
-      "desc": "City of Franklin Elf Parade followed by the Tree Lighting Ceremony on Thursday, December 3, 2026.",
-      "details": "Note: No Time, Location, or Description fields on the listing - all details come from the poster: ELF PARADE starts 6:00 PM at Market on Main; TREE LIGHTING CEREMONY starts 6:30 PM at Barrett's Landing.",
+      "desc": "Be an elf for the evening and join Santa as you march and carol from the Market on Main to Barrett's Landing. Enjoy music, hot chocolate, write letters to Santa, take pictures with Santa and much more.",
+      "details": "Elf Parade starts 6:00 PM at Franklin's Market on Main, 210 S. Main St. Tree Lighting Ceremony starts 6:30 PM at Barrett's Landing, 100 Barrett St. 150 elf hats available, while supplies last. Free event. Times and activities from the City of Franklin Parks & Recreation Facebook post.",
       "id": "ch-30-city-of-franklin-elf-parade-tree-light",
       "organizer": "City of Franklin",
       "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/e86eccb72f4c.jpg",
       "place": "Elf Parade at Market on Main; Tree Lighting Ceremony at Barrett's Landing",
       "short": "City of Franklin Elf",
       "sourceUrl": "https://fsachamber.chambermaster.com/events/details/city-of-franklin-elf-parade-tree-lighting-ceremony-6057",
-      "time": "All day",
-      "title": "City of Franklin Elf Parade & Tree Lighting Ceremony"
+      "time": "6:00 PM",
+      "title": "City of Franklin Elf Parade & Tree Lighting Ceremony",
+      "sourceName": "Franklin Department of Parks & Recreation (Facebook)"
     },
     {
       "category": "Community",
