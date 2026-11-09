@@ -1,5 +1,5 @@
 {
-  "count": 85,
+  "count": 86,
   "events": [
     {
       "category": "Festival",
@@ -415,6 +415,21 @@
       "time": "9:30 AM \u2013 11:30 AM",
       "title": "Empower Her Gold Mind Program - Workshops",
       "town": "Franklin"
+    },
+    {
+      "id": "fb-hubs-holiday-vendor-market-2026",
+      "title": "Hubs Holiday Vendor Market",
+      "short": "Shop local artisans, vendors and boutiques at the annual Hubs showcase, and stay for lunch.",
+      "date": "2026-11-14",
+      "time": "10:00 AM - 3:00 PM",
+      "town": "Franklin",
+      "place": "The Hubs Vine, 1459 Armory Drive, Franklin, VA",
+      "organizer": "The Hubs Vine",
+      "category": "Market",
+      "desc": "Join The Hubs Vine for the Annual Saturday Showcase. Shop a wonderful lineup of artisans, vendors, boutiques, and more, and support amazing local businesses. Grab lunch and enjoy a bite while you are there.",
+      "details": "Annual Saturday Showcase with artisans, vendors, boutiques, and more. Come shop, explore, and support local businesses, and stay for lunch.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b074ad7f3a5b.jpg",
+      "sourceName": "The Hubs Vine (Facebook)"
     },
     {
       "category": "Community",
@@ -1360,6 +1375,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-09 07:41",
+  "updated": "2026-11-09T15:20:04Z",
   "version": 2
 }
