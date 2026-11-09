@@ -1,5 +1,5 @@
 {
-  "count": 89,
+  "count": 90,
   "events": [
     {
       "category": "Festival",
@@ -1065,6 +1065,22 @@
       "sourceName": "Grace Memorial United Methodist Church (Facebook)"
     },
     {
+      "id": "polar-express-nostalgic-christmas-2026",
+      "title": "Polar Express Nostalgic Christmas",
+      "short": "Ride the Polar Express, visit Santa and Mrs. Claus, and enjoy model trains, hot cocoa, and a live Nativity at the museum.",
+      "date": "2026-12-05",
+      "time": "4:00 PM - 7:00 PM",
+      "town": "Courtland",
+      "place": "Southampton Ag & Forestry Museum, 26315 Heritage Lane, Courtland, VA 23837",
+      "organizer": "Southampton Ag & Forestry Museum",
+      "category": "Festival",
+      "cost": "$2.00",
+      "desc": "Join us at the Southampton Ag & Forestry Museum for a Polar Express Nostalgic Christmas. Gates open 4:00 to 7:00 PM, Santa and activities start at 5:00 PM. Rain or shine.",
+      "details": "Polar Express and Christmas model trains, train rides for kids at the decorated Heritage Village, visit with Santa and Mrs. Claus, cookies and hot cocoa, old time tree decorating, camp fire, Nativity with live animals, special appearances by favorite Christmas characters, hot dogs, chips and drinks for sale. Admission $2.00 cash only per person or a non-perishable food item; children 2 and under free. All food donations go to the Bags of Hope local food bank.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/f89b2ec8fd41.jpg",
+      "sourceName": "Southampton Ag & Forestry Museum"
+    },
+    {
       "category": "Arts & Culture",
       "contact": "Send an Email link on the Chamber listing (no address shown)",
       "cost": "See organizer",
@@ -1421,6 +1437,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-09T15:37:07Z",
+  "updated": "2026-11-09T16:38:22Z",
   "version": 2
 }
