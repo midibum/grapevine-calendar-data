@@ -1,5 +1,5 @@
 {
- "count": 91,
+ "count": 92,
  "events": [
   {
    "category": "Festival",
@@ -736,6 +736,24 @@
    "town": "Franklin"
   },
   {
+   "id": "catch-my-drift-tool-werkes-2026",
+   "title": "Catch My Drift X Tool Werkes Street Car Event",
+   "short": "Catch My Drift",
+   "date": "2026-11-21",
+   "endDate": "2026-11-22",
+   "time": "All day",
+   "town": "Capron",
+   "place": "Southampton Motor Speedway, 16388 Southampton Pkwy, Capron, VA 23829",
+   "organizer": "Catch My Drift",
+   "category": "Community",
+   "desc": "Catch My Drift Street Comp Round 3: two days of drift competition and open drift at Southampton Motor Speedway.",
+   "details": "Drift competition and open drift on the tri-oval, presented by Catch My Drift x Tool Werkes. Venue info: southamptonmotorspeedway.com, (757) 346-9241. Confirmed Nov 10 by Chris DeBord at Southampton Motor Speedway; the speedway will promote it on its socials later this week, so check there for times and admission as the weekend nears.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b59d9c179cb4.jpg",
+   "photoAi": true,
+   "sourceName": "Southampton Motor Speedway",
+   "sourceUrl": "https://southamptonmotorspeedway.com/events/"
+  },
+  {
    "category": "Library",
    "cost": "See organizer",
    "date": "2026-11-24",
@@ -1453,6 +1471,6 @@
    "town": "Franklin"
   }
  ],
- "updated": "2026-11-10T14:23:36Z",
+ "updated": "2026-11-10T16:07:26Z",
  "version": 2
 }
