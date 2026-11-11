@@ -1,5 +1,5 @@
 {
-  "count": 87,
+  "count": 89,
   "events": [
     {
       "category": "Festival",
@@ -464,6 +464,23 @@
       "sourceUrl": "https://www.facebook.com/Newsomsfire/posts/pfbid02Z1EmZhPqjgB3Z22y6oB7vh7Ee2JMkR7GQJRbFytpzDPSMGAVBdefzvNp3VwjNgf8l"
     },
     {
+      "id": "tn-pink-is-powerful-2026",
+      "title": "Pink is Powerful Annual Community Free Giveaway",
+      "short": "Free household goods, food, toys, and more for local families, this Saturday.",
+      "date": "2026-11-14",
+      "time": "11:00 AM - 3:00 PM",
+      "town": "Franklin",
+      "place": "Martin Luther King Center, 683 Oak Street, Franklin, VA 23851",
+      "organizer": "Pink is Powerful Cancer Support Group",
+      "category": "Community",
+      "desc": "The Pink is Powerful Cancer Support Group hosts its annual Community Free Giveaway. Free household goods, bedding, kitchen items, holiday decorations, home decor, personal care items, food, toys, jewelry, purses, clothing, and shoes, all free for local families. Community partners include Pleasant Shade Baptist Church, Franklin Brothers Keepers, Women of Grace Strength & Dignity, Surviving On Broken Pieces, Advancing Gods Kingdom, Franklin City School Board, GEMS Church, Franklin City Police Department, and Tranquility Homehealth.",
+      "details": "Free giveaway, open to the community. Items include household goods, bedding, kitchen items, holiday decorations, home decor, personal care items, food, toys, jewelry, purses, clothing, and shoes.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/08ff72f4b915.jpg",
+      "photoAi": true,
+      "sourceName": "Pink is Powerful Cancer Support Group (Facebook)",
+      "sourceUrl": "https://www.facebook.com/AUDREYHLEE/posts/pfbid02Juh3tXSyxjiho4o7voxLGgTcq9jDUCLpMnNkKSgxfNRmpP99sK86yBCFyvYbPsTul"
+    },
+    {
       "category": "Community",
       "contact": "Bonnie Lauver, 22511 Main Street, Courtland, VA 23837 (no phone or email shown)",
       "cost": "FREE",
@@ -573,6 +590,23 @@
       "time": "9:00 AM \u2013 3:30 PM",
       "title": "ODU Community Care - Free Medical Care",
       "town": "Franklin"
+    },
+    {
+      "id": "tn-sbs-sweepstakes-2026",
+      "title": "Small Business Saturday Sweepstakes",
+      "short": "Enter free for a chance to win one of 26 gift cards to local businesses.",
+      "date": "2026-11-18",
+      "time": "Enter by 11:59 PM",
+      "town": "Franklin",
+      "place": "Online",
+      "organizer": "Franklin Southampton Economic Development Inc. and The Tidewater News",
+      "category": "Community",
+      "desc": "Enter free for a chance to win one of 26 gift cards to local Franklin and Southampton County businesses. Entries close Wednesday, November 18, 2026, at 11:59 PM. Winners will be contacted by phone and email by November 20 and must pick up their gift cards locally. Presented by Franklin Southampton Economic Development Inc. and The Tidewater News, with 26 local businesses, ahead of Small Business Saturday on November 28.",
+      "details": "Free to enter, one entry per person, enter online. Gift cards from 26 local businesses: Belmont Peanuts, Don Pancho's Cantina, Edwards Hardware, Faded Cottage, FERIDIES World's Finest Peanuts & Provisions, Franklin Flea Market, Los Cerezos, Mackans, Main Street Market & Cafe, Parker's Peanuts, Pickers Paradise, Rawls Museum Arts, Ribickie Farms, LLC, Salon 303, Serenity Acres Homestead, Serve Restaurant, Smith Jewelers, Inc., Southern Charm Garden Center, Stone Horse Apiary & Apothecary LLC, StoreHouse Coffee, The Body Shoppe Massage & Energetics, The Cat's Meow, The Hubs Vine - Hubbard Peanut Company, The Lighthouse Project, Virginia Outdoors, LLC, and Wydia's Bistro. Winners contacted by phone and email by November 20 and must be available to pick up their gift cards locally.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/27ac3aff8c23.jpg",
+      "photoAi": true,
+      "sourceName": "The Tidewater News",
+      "sourceUrl": "https://www.thetidewaternews.com/contests/active"
     },
     {
       "category": "Arts & Culture",
@@ -1391,6 +1425,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-11T03:04:01Z",
+  "updated": "2026-11-11T12:52:09Z",
   "version": 2
 }
