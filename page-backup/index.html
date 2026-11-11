@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" href="data:," />
+<title>Grapevine Community Calendar</title>
+<meta name="description" content="Discover what's happening in Franklin &amp; Southampton County." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Grapevine Community Calendar" />
+<meta property="og:description" content="Discover what's happening in Franklin &amp; Southampton County." />
+<meta property="og:url" content="https://grapevinecalendar.com/" />
+<meta property="og:image" content="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2d3f587ad780.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Grapevine Community Calendar" />
+<meta name="twitter:description" content="Discover what's happening in Franklin &amp; Southampton County." />
+<meta name="twitter:image" content="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2d3f587ad780.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;0,6..72,900;1,6..72,600&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDFBF6; --surface:#FFFFFF; --surface2:#F6F1E6; --ink:#17201C; --muted:#5B6660;
+    --accent:#9C2B1F; --accent-ink:#FFFFFF; --green:#17513F; --green-ink:#FFFFFF;
+    --gold:#D99A26; --border:#E4DCCB; --chip:#F1EAD9; --shadow:0 10px 30px rgba(23,32,28,.08);
+    --radius:16px;
+  }
+  /* No dark mode on purpose (Eric, Nov 9, 2026): the site always renders light,
+     so it looks the same on every phone and link previews never go dark. */
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+  /* Page header — built from the transparent PNG pieces, so it flexes to any
+     window size and works in light and dark mode. Grapevine logo left,
+     sponsor banner right on desktop/tablet; stacked on phones. The masthead
+     stays cream in dark mode too (see the dark-mode block) so the dark navy
+     logo text stays readable. */
+  .masthead{padding:16px 0 12px;border-bottom:1px solid var(--border)}
+  .masthead-main{display:flex;align-items:center;gap:24px;justify-content:center}
+  .masthead-logo{flex:1 1 auto;max-width:640px;width:100%;height:auto;display:block}
+  .masthead-divider{flex:0 0 auto;width:1px;align-self:stretch;background:var(--border)}
+  .masthead-sponsor{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .masthead-sponsor-label{font-size:13px;color:#5B6660;letter-spacing:.02em}
+  .masthead-sponsor-img{width:280px;max-width:100%;height:auto;display:block}
+  .masthead-tagline{margin:10px 0 0;text-align:center;color:#5B6660;font-size:14.5px;border-top:2px solid var(--green);padding-top:10px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media (max-width:1024px){
+    /* Side by side needs about 1000px to fit, so stack below that instead of
+       letting the logo and sponsor get cut off at tablet and narrow-desktop widths. */
+    .masthead-main{flex-direction:column;gap:12px}
+    .masthead-logo{max-width:560px}
+    .masthead-divider{display:none}
+    .masthead-sponsor-img{width:280px}
+  }
+  @media (max-width:640px){
+    .masthead{padding:12px 0 8px}
+    .masthead-logo{max-width:400px}
+    .masthead-sponsor-img{width:260px}
+    .masthead-tagline{font-size:13.5px}
+  }
+  /* Hero — just the two buttons now, sitting in a soft warm band so they have
+     a background to live in and the page gets a break between the header and
+     the calendar. The seasonal hero image is gone, so the calendar sits much
+     closer to the top. */
+  .hero{padding:18px 0 6px}
+  .hero-card{background:var(--surface2);border:1px solid var(--border);border-radius:18px;padding:18px 22px}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .btn{appearance:none;border:0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:12px 18px;border-radius:999px;line-height:1}
+  .btn-red{background:var(--accent);color:var(--accent-ink)}
+  .btn-green{background:var(--green);color:var(--green-ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+  .btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  /* Controls */
+  .controls{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(10px);padding:14px 0 10px;margin-top:18px;border-bottom:1px solid var(--border)}
+  .controls-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .seg{display:inline-flex;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:4px;gap:2px}
+  .seg button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+  .pills{display:inline-flex;gap:6px;flex-wrap:wrap}
+  .pills button{border:1px solid var(--border);background:var(--surface);color:var(--ink);font-weight:700;font-size:13.5px;padding:8px 12px;border-radius:999px;cursor:pointer}
+  .pills button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+  .search{flex:1 1 180px;display:flex;gap:8px}
+  .search input, .search select{font:inherit;font-size:14.5px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--ink);min-width:0}
+  .search input{flex:1}
+  .count-line{margin:12px 2px 0;font-size:14px;color:var(--muted)}
+  .count-line strong{color:var(--ink)}
+  /* List view */
+  .event-list{display:grid;gap:14px;padding:18px 0 8px}
+  /* Thin promo strip between groups of events: the Whittington Station logo on the
+     left, and one short sentence about what the shop prints on the right, always
+     followed by the phone number and website (the logo carries neither). The print
+     services live here as ad copy now, not as a list, so the strip never reads like
+     site navigation. */
+  .promo-strip{display:flex;align-items:center;gap:10px 18px;background:#F7E8C8;border:1px solid #E3D5A8;border-radius:10px;padding:10px 14px;font-size:13.5px;color:#5B6660;line-height:1.45}
+  .promo-strip .promo-graphic{flex:0 0 auto;line-height:0}
+  .promo-strip .promo-graphic img{height:80px;width:auto}
+  .promo-strip .promo-copy{flex:1 1 260px;min-width:0}
+  .promo-strip .promo-copy p{margin:0}
+  .promo-strip .promo-copy a{color:#17201C;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+        @media (max-width:560px){
+    .promo-strip{flex-wrap:wrap;padding:10px 12px}
+    .promo-strip .promo-graphic img{height:64px}
+    .promo-strip .promo-copy{flex-basis:100%}
+  }
+  .event-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;display:grid;grid-template-columns:76px 220px 1fr;grid-template-areas:"date photo body";gap:16px}
+  .event-card .date-box{grid-area:date}
+  .event-card .event-photo{grid-area:photo;margin:0}
+  .event-card .event-photo img{width:220px;height:180px;max-height:none;object-fit:cover;display:block;margin:0}
+  .event-card .event-photo .cap{font-size:11px;line-height:1.35;padding:6px 8px}
+  .event-card .event-body{grid-area:body;min-width:0}
+  .event-card.no-photo{grid-template-columns:76px 1fr;grid-template-areas:"date body"}
+  @media (max-width:640px){ .event-card{grid-template-columns:62px 1fr;grid-template-areas:"date photo" "date body";padding:14px;gap:12px} .event-card.no-photo{grid-template-areas:"date body"} .event-card .event-photo img{width:100%;height:200px;max-height:200px;object-fit:cover} .event-card .event-photo .cap{font-size:12px;padding:6px 10px} }
+  .date-box{background:var(--surface2);border:1px solid var(--border);border-radius:12px;text-align:center;padding:10px 4px;height:fit-content}
+  .date-box .dow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .date-box .day{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:30px;line-height:1}
+  .date-box .mon{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .event-photo{margin:0 0 12px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface2)}
+  .event-photo img{width:100%;max-height:340px;object-fit:contain;display:block;margin:0 auto}
+  .event-photo .cap{display:block;font-size:12px;color:var(--muted);padding:6px 10px;border-top:1px solid var(--border)}
+  .lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+  .lightbox[hidden]{display:none}
+  .lightbox-backdrop{position:absolute;inset:0;background:rgba(23,32,28,.85)}
+  .lightbox-figure{position:relative;max-width:900px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);margin:0}
+  .lightbox-figure img{width:100%;max-height:78vh;object-fit:contain;display:block;background:#111}
+  .lightbox-figure figcaption{padding:12px 16px;font-size:13px;color:var(--muted)}
+  .lightbox-close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(23,32,28,.85);color:#fff;font-size:18px;line-height:1;cursor:pointer}
+  .event-card h3{font-family:"Newsreader",Georgia,serif;font-size:23px;line-height:1.15;margin:0 0 4px;font-weight:800}
+  .meta{font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+  .meta b{color:var(--ink)}
+  .desc{margin:8px 0 0;font-size:15px}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .tag{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:var(--chip);padding:4px 9px;border-radius:999px}
+  .tag.verify{background:transparent;border:1px dashed var(--gold);color:var(--muted);text-transform:none;letter-spacing:0;font-weight:600}
+  .card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .link-btn{font-size:13.5px;font-weight:800;text-decoration:none;border:1px solid var(--border);padding:8px 12px;border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit}
+  .link-btn.addcal{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+  /* Quick picks bar — Tonight / This weekend / Surprise me, right above the calendar */
+  .quick-bar{margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px}
+  .quick-bar-inner{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .quick-label{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:19px;margin-right:2px}
+  .quick-btn{border:1.5px solid var(--border);background:var(--surface2);color:var(--ink);font-weight:800;font-size:14.5px;padding:10px 16px;border-radius:999px;cursor:pointer;font-family:inherit}
+  .quick-btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+  .quick-btn.surprise{background:var(--gold);border-color:var(--gold);color:#241A02}
+  .quick-hint{margin:8px 2px 0;font-size:13.5px;color:var(--muted)}
+  /* "Featured in Eric's video" badge — shown only when an event carries a videoUrl */
+  .video-badge{display:inline-flex;align-items:center;gap:7px;background:var(--accent);color:var(--accent-ink);font-size:13px;font-weight:800;letter-spacing:.02em;text-decoration:none;padding:7px 12px;border-radius:999px;margin:0 0 8px}
+  .video-badge .play{font-size:11px;line-height:1}
+  .video-badge:hover{text-decoration:underline}
+  .details-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--border)}
+  .event-card.flash{animation:flashRing 1.1s ease-in-out 2}
+  @keyframes flashRing{0%,100%{box-shadow:var(--shadow)}50%{box-shadow:0 0 0 4px var(--gold),0 10px 30px rgba(23,32,28,.16)}}
+  @media (prefers-reduced-motion: reduce){ .event-card.flash{animation:none;outline:3px solid var(--gold)} }
+  .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);background:var(--ink);color:var(--bg);font-size:14.5px;font-weight:700;padding:11px 18px;border-radius:999px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:60;max-width:calc(100vw - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  /* Share dialog — shows the event link in a field with one clear action: Copy link */
+  .share-backdrop{position:fixed;inset:0;background:rgba(10,14,12,.55);z-index:80;display:flex;align-items:center;justify-content:center;padding:18px}
+  .share-backdrop.hidden{display:none !important}
+  .share-dialog{background:var(--surface);color:var(--ink);border:1px solid var(--border);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.28);width:100%;max-width:440px;padding:22px}
+  .share-dialog h3{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:26px;line-height:1.05;margin:0 0 6px}
+  .share-dialog .share-event-name{font-weight:800;font-size:16px;margin:0 0 8px;line-height:1.35}
+  .share-dialog .share-help{margin:0 0 16px;color:var(--muted);font-size:15px;line-height:1.5}
+  .share-dialog label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .share-link-field{width:100%;font:inherit;font-size:15px;line-height:1.4;padding:13px 14px;border:1.5px solid var(--border);border-radius:12px;background:var(--surface2);color:var(--ink);word-break:break-all}
+  .share-link-field:focus{outline:3px solid var(--gold);outline-offset:2px}
+  .share-copy-btn{width:100%;justify-content:center;font-size:17px;padding:15px 18px;margin-top:14px}
+  .share-copied{margin:12px 0 0;font-size:15px;font-weight:700;color:var(--green);text-align:center;min-height:1.4em}
+  .share-close-btn{width:100%;justify-content:center;margin-top:10px}
+  .details{display:none;margin-top:12px;border-top:1px solid var(--border);padding-top:12px;font-size:14.5px}
+  .details.open{display:block}
+  .details dl{display:grid;grid-template-columns:110px 1fr;gap:4px 12px;margin:0}
+  .details dt{font-weight:800;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+  .details dd{margin:0}
+  /* Month / week */
+  .cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px 0 10px}
+  .cal-head h2{font-family:"Newsreader",Georgia,serif;font-size:26px;margin:0;font-weight:900}
+  .nav-btn{border:1px solid var(--border);background:var(--surface);width:40px;height:40px;border-radius:999px;font-size:18px;cursor:pointer;color:var(--ink)}
+  .month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;padding-bottom:8px}
+  .dow-head{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;padding:4px 0}
+  .cell{background:var(--surface);border:1px solid var(--border);border-radius:10px;min-height:92px;padding:6px;overflow:hidden}
+  .cell.out{opacity:.42}
+  .cell.today{border-color:var(--gold);border-width:2px}
+  .cell .num{font-size:12.5px;font-weight:800}
+  .cell .ev{display:block;width:100%;text-align:left;border:0;cursor:pointer;margin-top:4px;font-size:11.5px;font-weight:700;line-height:1.25;background:var(--chip);color:var(--ink);border-radius:6px;padding:4px 6px}
+  .cell .ev.red{background:var(--accent);color:var(--accent-ink)}
+  @media (max-width:640px){ .cell{min-height:64px;padding:4px} .cell .ev{font-size:10px;padding:3px 4px} }
+  .week-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding-bottom:8px}
+  @media (max-width:820px){ .week-grid{grid-template-columns:1fr} .week-col{min-height:0 !important} }
+  .week-col{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px;min-height:150px}
+  .week-col.today{border-color:var(--gold);border-width:2px}
+  .week-col h4{margin:0 0 2px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .week-col .wnum{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:24px;line-height:1}
+  .week-col .ev{margin-top:8px;font-size:13px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px;width:100%;text-align:left;cursor:pointer;color:var(--ink);font-weight:700}
+  .empty{color:var(--muted);font-size:13px;margin-top:10px}
+  .empty-state{background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius);padding:26px;text-align:center;color:var(--muted)}
+  /* Sections */
+  section.block{padding:30px 0 6px}
+  .block h2{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:clamp(26px,4vw,36px);line-height:1.05;margin:0 0 8px}
+  .block .lead{color:var(--muted);max-width:70ch;margin:0 0 16px;font-size:16px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:760px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .step .n{width:34px;height:34px;border-radius:999px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:8px}
+  .step h3{margin:0 0 4px;font-size:17px}
+  .step p{margin:0;color:var(--muted);font-size:14.5px}
+  .submit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:16px;align-items:start;margin-top:16px}
+  @media (max-width:820px){ .submit-grid{grid-template-columns:1fr} }
+  .form-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+  .form-card h3{margin:0 0 10px;font-size:18px}
+  .wufoo-details summary{display:block;cursor:pointer;background:var(--green);color:var(--green-ink);font-weight:800;font-size:16px;text-align:center;padding:14px 18px;border-radius:12px;list-style:none}
+  .wufoo-details summary::-webkit-details-marker{display:none}
+  .wufoo-details[open ] summary{margin-bottom:14px}
+  .wufoo-details summary:hover{filter:brightness(1.08)}
+  .form-placeholder{border:1.5px dashed var(--gold);border-radius:14px;background:var(--surface2);padding:16px;margin-top:14px}
+  .form-placeholder .ph-badge{display:inline-block;background:var(--gold);color:#241A02;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:8px}
+  .form-placeholder h4{margin:0 0 6px;font-size:17px}
+  .form-placeholder p{margin:0 0 10px;color:var(--muted);font-size:14.5px}
+  .submit-banner{background:var(--green);color:var(--green-ink);border-radius:16px;padding:18px 20px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .submit-banner h3{font-family:"Newsreader",Georgia,serif;font-size:24px;margin:0;line-height:1.1}
+  .submit-banner p{margin:4px 0 0;opacity:.92;font-size:15px;max-width:62ch}
+  .submit-banner .btn{background:#fff;color:#123B2E;border:0;white-space:nowrap}
+  .field{margin-bottom:10px}
+  .field label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .field .fake{border:1px solid var(--border);background:var(--surface2);border-radius:10px;padding:10px 12px;font-size:14px;color:var(--muted)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media (max-width:480px){ .two{grid-template-columns:1fr} }
+  .print-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:760px){ .print-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:480px){ .print-grid{grid-template-columns:1fr} }
+  .print-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .print-item h3{margin:0 0 4px;font-size:17px}
+  .print-item p{margin:0;color:var(--muted);font-size:14.5px}
+  .print-item .print-contact{margin:12px 0 0;font-size:13.5px;font-weight:700;color:var(--ink)}
+  .print-item .print-contact a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+  .cta-band{margin:26px 0 0;background:var(--accent);color:var(--accent-ink);border-radius:18px;padding:22px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .cta-band h3{font-family:"Newsreader",Georgia,serif;font-size:26px;margin:0;line-height:1.1}
+  .cta-band p{margin:4px 0 0;opacity:.92}
+  .cta-band .btn{background:#fff;color:#7A1F14;border:0}
+  footer{margin-top:36px;background:var(--green);color:#fff;padding:28px 0 34px;border-top:6px solid var(--gold)}
+  footer .fname{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:30px;line-height:1}
+  footer p{margin:6px 0;color:rgba(255,255,255,.9);font-size:14.5px}
+  footer a{font-weight:700}
+  .footer-brand{background:#fff;border-radius:16px;padding:14px 18px;max-width:360px;margin:0 auto 18px}
+  .footer-brand img{width:100%;height:auto;display:block}
+  .footer-sponsor{display:block;width:100%;max-width:360px;height:auto;margin:0 auto 18px}
+  .hidden{display:none !important}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-main">
+      <img class="masthead-logo" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/9b3147ed1471.png" alt="Franklin Southampton Grapevine Community Calendar" />
+      <div class="masthead-divider" aria-hidden="true"></div>
+      <div class="masthead-sponsor">
+        <span class="masthead-sponsor-label">Sponsored by</span>
+        <img class="masthead-sponsor-img" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/920d8af0a060.png" alt="Whittington Station Printing and Graphics, Community Spotlight, call 757-214-6923" />
+      </div>
+    </div>
+    <p class="masthead-tagline">Discover what's happening in Franklin &amp; Southampton County.</p>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1 class="sr-only">Community Events Calendar</h1>
+  <div class="hero-card">
+    <div class="hero-actions">
+      <a class="btn btn-red" href="#calendar">Browse upcoming events</a>
+      <a class="btn btn-green" href="#submit">+ Submit an event</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="quick-bar" aria-label="Quick picks">
+    <div class="quick-bar-inner">
+      <span class="quick-label">What&rsquo;s happening?</span>
+      <button type="button" class="quick-btn" data-range="tonight" aria-pressed="false">Tonight</button>
+      <button type="button" class="quick-btn" data-range="weekend" aria-pressed="false">This weekend</button>
+      <button type="button" class="quick-btn surprise js-surprise">Surprise me</button>
+    </div>
+    <p class="quick-hint">Tonight and This weekend answer the question most folks open a calendar with. Surprise me picks one random upcoming event, so the small ones get seen too.</p>
+  </div>
+
+  <div class="controls" id="calendar">
+    <div class="controls-row">
+      <div class="seg" role="group" aria-label="Calendar view">
+        <button type="button" data-view="list" aria-pressed="true">List</button>
+        <button type="button" data-view="week" aria-pressed="false">Week</button>
+        <button type="button" data-view="month" aria-pressed="false">Month</button>
+      </div>
+      <div class="pills" role="group" aria-label="Look ahead">
+        <button type="button" data-range="tonight" aria-pressed="false">Tonight</button>
+        <button type="button" data-range="weekend" aria-pressed="false">This weekend</button>
+        <button type="button" data-range="7" aria-pressed="false">Next 7 days</button>
+        <button type="button" data-range="30" aria-pressed="false">Next 30 days</button>
+        <button type="button" data-range="all" aria-pressed="true">All upcoming</button>
+        <button type="button" class="js-surprise" aria-label="Jump to a random upcoming event">Surprise me</button>
+      </div>
+    </div>
+    <div class="controls-row" style="margin-top:10px">
+      <div class="search">
+        <input id="q" type="search" placeholder="Search events, towns, organizers…" aria-label="Search events" />
+        <select id="town" aria-label="Filter by town">
+          <option value="">All towns</option>
+          <option>Capron</option><option>Courtland</option><option>Franklin</option><option>Ivor</option><option>Severn, NC</option><option>Smithfield</option><option>Southampton County</option>
+        </select>
+      </div>
+    </div>
+    <p class="count-line" id="countLine" aria-live="polite"></p>
+  </div>
+
+  <div id="listView"><div class="event-list" id="eventList"></div></div>
+
+  <div id="weekView" class="hidden">
+    <div class="cal-head">
+      <button class="nav-btn" id="weekPrev" aria-label="Previous week">‹</button>
+      <h2 id="weekTitle"></h2>
+      <button class="nav-btn" id="weekNext" aria-label="Next week">›</button>
+    </div>
+    <div class="week-grid" id="weekGrid"></div>
+  </div>
+
+  <div id="monthView" class="hidden">
+    <div class="cal-head">
+      <button class="nav-btn" id="monthPrev" aria-label="Previous month">‹</button>
+      <h2 id="monthTitle"></h2>
+      <button class="nav-btn" id="monthNext" aria-label="Next month">›</button>
+    </div>
+    <div class="month-grid" id="monthDow"></div>
+    <div class="month-grid" id="monthGrid"></div>
+    <p style="color:var(--muted);font-size:13.5px">Tap an event in the calendar to jump to its full details in the list.</p>
+  </div>
+
+  <section class="block" id="submit">
+    <h2>Submit an Event</h2>
+    <p class="lead">Church suppers, fire department fundraisers, school events, vendor shows, town festivals, ballfield nights. If it is open to the public around here, it belongs here. Submitting is free.</p>
+    <div class="submit-banner">
+      <div><h3>Got something coming up?</h3><p>Fill out the form below and we will get it on the calendar. You can upload your flyer or photo right in the form.</p></div>
+      <a class="btn" href="#wufoo-form" onclick="document.getElementById('wufoo-details').open = true;">Fill out the form ↓</a>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>You send it in</h3><p>Fill out the form below with the event name, date, time, place, and a sentence or two about it, in your own words. Upload your flyer or photo if you have one.</p></div>
+      <div class="step"><div class="n">2</div><h3>We review it</h3><p>Whittington Station checks the date, town, and details before it goes on the calendar, so listings stay accurate and free of spam.</p></div>
+      <div class="step"><div class="n">3</div><h3>It appears here</h3><p>Approved events show up in the list, week, and month views, where everyone can find them.</p></div>
+    </div>
+    <div class="submit-grid">
+      <div class="form-card" id="wufoo-form" aria-label="Submit an event">
+        <details id="wufoo-details" class="wufoo-details">
+          <summary>Submit Your Event</summary>
+        <div id="wufoo-r1emexxu10p5ifm">
+Fill out my <a href="https://midibum.wufoo.com/forms/r1emexxu10p5ifm">online form</a>.
+</div>
+        </details>
+        <script>
+var wufooLoaded = false;
+function loadWufooForm() {
+  if (wufooLoaded) return;
+  wufooLoaded = true;
+  var r1emexxu10p5ifm;
+  (function(d, t) {
+    var s = d.createElement(t), options = {
+      'userName':'midibum',
+      'formHash':'r1emexxu10p5ifm',
+      'autoResize':true,
+      'height':'984',
+      'async':true,
+      'host':'wufoo.com',
+      'header':'hide',
+      'ssl':true};
+    s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+    s.onload = s.onreadystatechange = function() {
+      var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+      try { r1emexxu10p5ifm = new WufooForm(); r1emexxu10p5ifm.initialize(options); r1emexxu10p5ifm.display(); } catch (e) {}
+    };
+    var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+  })(document, 'script');
+}
+document.getElementById('wufoo-details').addEventListener('toggle', function() {
+  if (this.open) loadWufooForm();
+});
+</script>
+      </div>
+      <div>
+        <div class="form-card">
+          <h3>Good submissions get posted faster</h3>
+          <p style="margin:0 0 8px;color:var(--muted);font-size:15px">Double-check the date and start time, give a real street address or landmark, and write the description yourself instead of copying a flyer word for word. If your event changes or gets cancelled, <a href="mailto:whittingtonstation@gmail.com" style="font-weight:700">email us</a> and we will update it.</p>
+          <p style="margin:0;color:var(--muted);font-size:15px">Private parties and events that are not open to the public will not be listed.</p>
+        </div>
+        <div class="cta-band" style="margin-top:14px">
+          <div><h3>Need flyers for this event?</h3><p>Flyers, posters, tickets, yard signs, banners, and handouts for this exact event, printed right here in Boykins.</p></div>
+          <a class="btn" href="tel:+17572146923">Call (757) 214-6923</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Hosting something? We print the stuff that brings the people!</h2>
+    <div class="print-grid">
+      <div class="print-item"><h3>Flyers &amp; posters</h3><p>Full-color flyers and posters for shop windows, bulletin boards, and church halls.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+      <div class="print-item"><h3>Banners &amp; signs</h3><p>Roadside banners and signs people can actually read from the car.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+      <div class="print-item"><h3>Menus &amp; programs</h3><p>Menus, event programs, and handouts that look as good as the day itself.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+      <div class="print-item"><h3>Business cards</h3><p>Cards for vendors, organizers, and local businesses worth keeping.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+      <div class="print-item"><h3>Labels &amp; stickers</h3><p>Labels for jars, boxes, baked goods, and everything at the vendor table.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+      <div class="print-item"><h3>Brochures</h3><p>Folded brochures that tell your story when you cannot be there to tell it.</p><p class="print-contact">Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.</p></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/101eeebb36a6.jpg" alt="Franklin Southampton Grapevine" loading="lazy"></div>
+    <img class="footer-sponsor" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy">
+    <p>32128 S. Main Street, Boykins, Virginia 23827 &nbsp;•&nbsp; Office <a href="tel:+17572146923">(757) 214-6923</a> &nbsp;•&nbsp; Fax 888-509-1478 &nbsp;•&nbsp; By appointment only</p>
+    <p>Community Events Calendar for Southampton County, Franklin, and nearby communities. Know of an event that should be here? <a href="#submit">Submit it above</a> or call the shop.</p>
+    <p style="font-size:13px;opacity:.85">Event details are provided by organizers and local listings. Please confirm date and time with the organizer before attending.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="share-backdrop hidden" id="shareBackdrop">
+  <div class="share-dialog" role="dialog" aria-modal="true" aria-labelledby="shareTitle" aria-describedby="shareHelp">
+    <h3 id="shareTitle">Share this event</h3>
+    <p class="share-event-name" id="shareEventName"></p>
+    <p class="share-help" id="shareHelp">Here&rsquo;s the link to this event. Tap <strong>Copy link</strong>, then paste it anywhere &mdash; a text, an email, or a Facebook post &mdash; to share it.</p>
+    <label for="shareLinkInput">Link to this event</label>
+    <input class="share-link-field" id="shareLinkInput" type="text" readonly value="" aria-label="Link to this event" />
+    <button type="button" class="btn btn-green share-copy-btn" id="shareCopyBtn">Copy link</button>
+    <p class="share-copied" id="shareCopied" role="status" aria-live="polite"></p>
+    <button type="button" class="btn btn-ghost share-close-btn" id="shareCloseBtn">Close</button>
+  </div>
+</div>
+
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Full-size event photo">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCap"></figcaption>
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">✕</button>
+    </figure>
+  </div>
+
+<script>
+function startOfToday(){ var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+var TODAY = startOfToday(); // the visitor's real current date — past events retire against this on every load
+var SUBMIT_EMAIL = "whittingtonstation@gmail.com";
+/* HOW TO FLAG AN EVENT AS FEATURED IN ERIC'S VIDEO:
+   Add a "videoUrl" field to that event's object below, e.g.
+     "videoUrl": "https://www.facebook.com/watch/?v=..."
+   Its card (and detail view) will then show a "Featured in Eric's video" badge
+   linking straight to the video. No event is flagged yet — the badge appears
+   automatically the first time a videoUrl is added. Nothing else to change. */
+/* Built-in copy of the events, used if the live file cannot be loaded.
+   Day-to-day event updates go to events.json on GitHub, not to this list. */
+var EVENTS_FALLBACK = [{"category":"Festival","cost":"See organizer","date":"2026-10-31","desc":"An evening on Main Street with live music, food, games, prizes, and treats, sponsored by Capron Fire and Rescue and Capron Methodist Church.","details":"A family-friendly Saturday night option right in Capron. Hosted at the fire department on Main Street.","id":"capron-harvest","organizer":"Capron Fire and Rescue & Capron Methodist Church","place":"Capron Fire Department, Main Street, Capron","short":"Harvest Festival","time":"5:00 \u2013 7:00 PM","title":"Harvest Festival","town":"Capron"},{"category":"Fundraiser","contact":"252-585-0411","cost":"See organizer","date":"2026-11-05","desc":"Turkey shoot at the ball field with a concession stand serving food, cold drinks, hot coffee, and hot chocolate. Also held Nov 12 and Nov 19.","details":"First of three Thursday nights: Nov 5, 12, and 19, all starting at 6:30 PM.","id":"severn-turkey","organizer":"Severn Volunteer Fire Department","place":"Severn Ball Field, Highway 35, Severn, NC","short":"Turkey Shoot","time":"Starts 6:30 PM","title":"Turkey Shoot","town":"Severn, NC"},{"category":"History","contact":"757-356-1223","cost":"See museum","date":"2026-11-10","desc":"A midday program on Veterans Day and the history behind it, with philatelist and retired U.S. Navy lithographer Mark Campbell guiding visitors through USPS stamps honoring veterans, including the 1968 Airlift to Our Servicemen stamp and the 1995 POW and MIA Never Forgotten stamp.","details":"Held at the Isle of Wight County Museum in Smithfield.","id":"veterans-stamps","organizer":"Isle of Wight County Museum","place":"Isle of Wight County Museum, 103 Main Street, Smithfield","short":"Veterans Stamps","time":"12:30 PM","title":"First Class Delivery: Veterans Day & the Stamps That Honor Veterans","town":"Smithfield"},{"category":"History","contact":"757-356-1223","cost":"Free to join \u2014 see organizer","date":"2026-11-13","desc":"Help turn Revolutionary-era documents from the Library of Virginia's Legislative Petitions collection into searchable records. Includes an introduction and a website demonstration, then hands-on transcribing, ending with a short discussion of stories uncovered.","details":"No experience needed to get started. Participants work independently for part of the session and are encouraged to ask questions and help each other.","id":"transcribe","organizer":"Isle of Wight County VA250 / Historic Isle of Wight","place":"Isle of Wight County, Smithfield area \u2014 see organizer for room details","short":"Transcribe","time":"12:30 PM","title":"Isle of Wight County VA250 Transcribe-a-thon","town":"Smithfield"},{"category":"Market","contact":"757-555-6390 / 757-742-1604","cost":"Free to attend","date":"2026-11-14","desc":"Food vendors, craftsmen, and local businesses in one place, supporting and promoting small businesses in the community.","details":"To register as a vendor or for more information, contact the organizer at ccc.rosenwaldschool@gmail.com or call 757-555-6390 or 757-742-1604.","id":"vendor-showcase","organizer":"November Local Vendor Showcase","place":"Courtland Community Center, 25499 Florence Street, Courtland","short":"Vendor Showcase","time":"11:00 AM \u2013 3:00 PM","title":"November Local Vendor Showcase","town":"Courtland"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-11-07","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-1-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-07-2026-4775","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-11-07","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster also lists a Heritage Market Oct 10-Nov 21, 10 AM-1 PM; this date falls in that window, while the listing's field time is 9 AM-12 PM. The listing's text description is stale 2025-season copy and was not used.","id":"ch-2-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-11-07-2026-5175","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"rawlsarts@gmail.com","cost":"RMA Members $90; Non-Members $110","date":"2026-11-07","desc":"Learn kaleidoscope eco printing on silk using vibrant colors with your foliage and create two silk scarves; for beginners and experienced crafters alike. Full-day workshop, bring a lunch. Bring high-tannin leaves (oak, maples, rose, hickory, sumac), eucalyptus and colorful flowers, and a 1-gallon empty water jug to use as a weight.","details":"Registration: https://forms.gle/HvfMoaQZxhVswHpe6","id":"ch-3-kaleidoscope-eco-printing-on-silk-scar","place":"22376 Linden Street, Courtland, VA 23837","short":"Kaleidoscope Eco Printing","sourceUrl":"https://fsachamber.chambermaster.com/events/details/kaleidoscope-eco-printing-on-silk-scarves-6215","time":"10:00 AM \u2013 4:00 PM","title":"Kaleidoscope Eco Printing on Silk Scarves","town":"Courtland"},{"category":"Arts & Culture","contact":"rawlsarts@gmail.com, 757-653-0754","cost":"$90 RMA Members / $110 Non-Members","date":"2026-11-07","desc":"Learn kaleidoscope eco-printing on silk using vibrant colors with your foliage and create two silk scarves; for beginners and experienced crafters alike.","details":"Registration: https://forms.gle/yCUkbF2zCWkSZG1LA Note: Separate listing from Kaleidoscope Eco Printing on Silk Scarves, with a different registration link.","id":"ch-4-kaleidoscope-eco-print-on-silk-worksho","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/c60dc0bc40e1.jpg","place":"Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837","short":"Kaleidoscope Eco-Print on","sourceUrl":"https://fsachamber.chambermaster.com/events/details/kaleidoscope-eco-print-on-silk-workshop-6233","time":"10:00 AM \u2013 4:00 PM","title":"Kaleidoscope Eco-Print on Silk Workshop","town":"Courtland"},{"category":"Festivals & Celebrations","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"FREE","date":"2026-11-07","desc":"Downtown Christmas Open House. Carriage rides 11 am-2 pm; Meet Santa at Storehouse 11:30 am-1:00 pm; live music by Riley Marie at Faded Cottage; Christmas carolers at Market on Main; Santa's letter-writing station at Mackans; T.W.'s Bistro & Grill at Market on Main; shop participating businesses and Market on Main for a chance to win a gift basket.","details":"Downtown Christmas Open House. Carriage rides 11 am-2 pm; Meet Santa at Storehouse 11:30 am-1:00 pm; live music by Riley Marie at Faded Cottage; Christmas carolers at Market on Main; Santa's letter-writing station at Mackans; T.W.'s Bistro & Grill at Market on Main; shop participating businesses and Market on Main for a chance to win a gift basket.","id":"ch-5-downtown-christmas-open-house","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/335b59103313.jpg","place":"Downtown Franklin and Market on Main","short":"Downtown Christmas Open","sourceUrl":"https://fsachamber.chambermaster.com/events/details/downtown-christmas-open-house-6243","time":"10:00 AM \u2013 4:00 PM","title":"Downtown Christmas Open House","town":"Franklin"},{"category":"Library","cost":"See organizer","date":"2026-11-10","desc":"Story Time and Craft. Join us as we read a special story about Veterans Day and create a little craft to say thank you to those who served.","details":"Note: No time shown on the Chamber listing or poster; entered as an all-day event.","id":"ch-6-walter-cecil-rawls-library-honoring-ou","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/975cd0f772ba.jpg","place":"Walter Cecil Rawls Library, 22511 Main St, Courtland, VA","short":"Walter Cecil Rawls","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-honoring-our-veterans-6248","time":"All day","title":"Walter Cecil Rawls Library - Honoring Our Veterans","town":"Courtland"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-11-10","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-7-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-10-2026-4976","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-11-11","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-8-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-11-2026-5812","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Library","cost":"See organizer","date":"2026-11-12","desc":"Adult Craftsy - Diamond Art Holiday Cards. Registration required (no registration link shown on the listing).","details":"Adult Craftsy - Diamond Art Holiday Cards. Registration required (no registration link shown on the listing).","id":"ch-9-walter-cecil-rawls-library-diamond-art","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0e8f7898f472.jpg","place":"22511 Main St, Courtland, VA","short":"Walter Cecil Rawls","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-diamond-art-craft-6249","time":"5:30 PM \u2013 6:30 PM","title":"Walter Cecil Rawls Library - Diamond Art Craft","town":"Courtland"},{"category":"Community","cost":"Event tickets $50; Reverse Raffle $100; must be 21 and over to attend","date":"2026-11-12","desc":"Davis-Ridley Oyster Roast and Reverse Raffle benefiting Southampton Academy Athletics, with oysters, fish, and beverages and live music by RT Johnson.","details":"Note: The listing's Time field reads 5:30 PM - 9:00 PM EST, but the event poster says 5:30-9:30 PM.","id":"ch-10-davis-ridley-oyster-roast","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/630a6c598bcf.jpg","place":"Franklin-Southampton County Fairgrounds","short":"Davis Ridley Oyster Roast","sourceUrl":"https://fsachamber.chambermaster.com/events/details/davis-ridley-oyster-roast-6255","time":"5:30 PM \u2013 9:00 PM","title":"Davis Ridley Oyster Roast","town":"Franklin"},{"category":"Community","contact":"Chief Red Hawk 757-294-6639; Karen Running Moon Barrett 757-572-4890","cost":"$7.00 per student","date":"2026-11-13","desc":"Enjoy American Indian arts and crafts demonstrations, flint knapping, Indian artifacts, language booth, Aztec dancers and more! Schedule: arrive 8:45 AM; demonstrations 9:00 AM; language booth 10:30 AM; Native American dancing 11:00 AM; lunch break 11:45 AM; load buses 2:00 PM.","details":"Note: The listing's Date/Time field says Friday, November 6, 2026, but the event date is November 13, 2026 and the poster says Friday, November 13, 2026.","id":"ch-11-cheroenhaka-nottoway-indian-tribe-scho","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/cc190bec1925.jpg","place":"Cattashowrock Town, 27345 Aquia Path, Courtland, VA","short":"Cheroenhaka (Nottoway)","sourceUrl":"https://fsachamber.chambermaster.com/events/details/cheroenhaka-nottoway-indian-tribe-school-day-6222","time":"9:00 AM \u2013 3:00 PM","title":"Cheroenhaka (Nottoway) Indian Tribe School Day","town":"Courtland"},{"category":"Community","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"Free - RSVP BY THE WEDNESDAY OF EACH WORKSHOP","date":"2026-11-14","desc":"Heart of Gold Shelter invites women ages 18 and older who have been impacted by domestic violence, incarceration, homelessness, or other life challenges to a free job-readiness and empowerment workshop to build confidence, develop workforce skills, and prepare for employment opportunities.","details":"Heart of Gold Shelter invites women ages 18 and older who have been impacted by domestic violence, incarceration, homelessness, or other life challenges to a free job-readiness and empowerment workshop to build confidence, develop workforce skills, and prepare for employment opportunities.","id":"ch-12-empower-her-gold-mind-program-workshop","place":"Food Bank, 618 South Street, Franklin, VA","short":"Empower Her Gold Mind","sourceUrl":"https://fsachamber.chambermaster.com/events/details/empower-her-gold-mind-program-workshops-6185","time":"9:30 AM \u2013 11:30 AM","title":"Empower Her Gold Mind Program - Workshops","town":"Franklin"},{"category":"Arts & Culture","contact":"757-653-0754, rawlsarts@gmail.com","cost":"Free and open to the public","date":"2026-11-14","desc":"Opening reception for an interdisciplinary exhibition celebrating the vibrant work of Sandy Lupton, Jill Tiderman, and Crys Warlitner, from brightly layered semi-realistic works and unexpected conceptual creations to richly textured abstracts.","details":"Website: https://rawlsarts.org/","id":"ch-13-soul-expressions-three-artists-three-v","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/1a1ed81796b4.jpg","place":"Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837","short":"Soul Expressions: Three","sourceUrl":"https://fsachamber.chambermaster.com/events/details/soul-expressions-three-artists-three-visions-opening-receptions-6242","time":"2:00 PM \u2013 4:00 PM","title":"Soul Expressions: Three Artists, Three Visions Opening Receptions","town":"Courtland"},{"category":"Community","contact":"Bonnie Lauver, 22511 Main Street, Courtland, VA 23837 (no phone or email shown)","cost":"FREE","date":"2026-11-15","desc":"Blackwater Regional Library will host Operation Cozy, a donation drive to collect new hats, scarves, and gloves for all ages. Runs November 15 - December 19, 2026.","details":"Website: http://www.blackwaterlib.org","endDate":"2026-12-19","id":"ch-14-operation-cozy","place":"Franklin and Courtland Libraries","short":"Operation Cozy","sourceUrl":"https://fsachamber.chambermaster.com/events/details/operation-cozy-6258","time":"All day","title":"Operation Cozy","town":"Courtland"},{"category":"Library","cost":"See organizer","date":"2026-11-17","desc":"Hibernation Story Time - a cozy story time reading I Don't Want to Go to Sleep and discovering how animals get ready for winter.","details":"Note: The listing's Location field prints 222511 Main St (extra digit); the poster and the library's other listings show 22511 Main St.","id":"ch-15-walter-cecil-rawls-library-story-time","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/a2616775e863.jpg","place":"22511 Main St, Courtland, VA","short":"Walter Cecil Rawls","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-story-time-6250","time":"10:00 AM \u2013 11:00 AM","title":"Walter Cecil Rawls Library - Story Time","town":"Courtland"},{"category":"Community","contact":"757-562-3100","cost":"See organizer","date":"2026-11-17","desc":"A safe and compassionate support group to share your journey, learn from others, and gain helpful resources; for family members, friends, or caregivers. Support today. Hope for tomorrow. Registration 5:30-6:00 PM, Discussion and Support 6:00-8:00 PM.","details":"Note: The Chamber listing title spells it Woods Ege; the location spells it Woods Edge.","id":"ch-16-the-village-at-woods-edge-alzheimer-s-","organizer":"The Village at Woods Edge","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/64ddab3d1781.jpg","place":"The Village at Woods Edge Back Porch and Grille","short":"The Village at Woods Edge","sourceUrl":"https://fsachamber.chambermaster.com/events/details/the-village-at-woods-ege-alzheimer-s-support-group-6256","time":"5:30 PM \u2013 8:00 PM","title":"The Village at Woods Edge Alzheimer's Support Group"},{"category":"Community","cost":"See organizer","date":"2026-11-17","desc":"Sounds of Georgia is a high-energy, educational journey through Georgia's musical heritage from the 1920s to the 1990s, celebrating Georgia-born artists like Ray Charles, Johnny Mercer, the B52s, and the Allman Brothers, spanning blues, jazz, country, and rock 'n roll.","details":"Sounds of Georgia is a high-energy, educational journey through Georgia's musical heritage from the 1920s to the 1990s, celebrating Georgia-born artists like Ray Charles, Johnny Mercer, the B52s, and the Allman Brothers, spanning blues, jazz, country, and rock 'n roll.","id":"ch-17-franklin-southampton-concert-series-ft","place":"Southampton High School Auditorium, 23350 Southampton Parkway, Courtland, VA","short":"Franklin-Southampton","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-southampton-concert-series-ft-sounds-of-georgia-6230","time":"7:30 PM \u2013 9:00 PM","title":"Franklin-Southampton Concert Series Ft. Sounds of Georgia","town":"Courtland"},{"category":"Library","cost":"See organizer","date":"2026-11-18","desc":"STEAM activity How to disguise a Turkey at the Walter Cecil Rawls Library.","details":"STEAM activity How to disguise a Turkey at the Walter Cecil Rawls Library.","id":"ch-18-walter-cecil-rawls-library-steam","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b79e4a13ac2b.jpg","place":"22511 Main ST, Courtland, VA","short":"Walter Cecil Rawls","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-steam-6251","time":"3:30 PM \u2013 5:30 PM","title":"Walter Cecil Rawls Library - STEAM","town":"Courtland"},{"category":"Arts & Culture","contact":"rawlsarts@gmail.com, 757-653-0754","cost":"$20 (All Supplies Included)","date":"2026-11-19","desc":"Festive card-making class with Kay Thomas and Dell Aycock; make two Christmas cards featuring playful pop-ups, unique folds, sparkling embellishments, and cheerful coloring.","details":"Registration: https://forms.gle/hwU48moCxRUJ66zK8","id":"ch-19-holiday-card-making","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/1748f3a63355.jpg","place":"Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837","short":"Holiday Card Making","sourceUrl":"https://fsachamber.chambermaster.com/events/details/holiday-card-making-6234","time":"10:00 AM \u2013 12:00 PM","title":"Holiday Card Making","town":"Courtland"},{"category":"Library","cost":"See organizer","date":"2026-11-19","desc":"As The Page Turns in SOCO book club at the Walter Cecil Rawls Library.","details":"As The Page Turns in SOCO book club at the Walter Cecil Rawls Library.","id":"ch-20-walter-cecil-rawls-library-book-club","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2ad9e52f4522.jpg","place":"22511 Main St, Courtland, VA","short":"Walter Cecil Rawls","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-book-club-6252","time":"2:00 PM \u2013 3:00 PM","title":"Walter Cecil Rawls Library - Book Club","town":"Courtland"},{"category":"Community","contact":"Madison Berryman, 757-562-4900","cost":"See organizer","date":"2026-11-19","desc":"The 31st annual Community Expo, celebrating the strength of local businesses and the future of Franklin and Southampton County, with patriotic spirit, community pride, and chances to connect with local businesses and organizations.","details":"Website: http://www.fsachamber.com","id":"ch-21-chamber-community-expo","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/51b32a4d20d7.jpg","place":"Workforce Development Center, 100 N. College Drive, Franklin, VA","short":"Chamber Community Expo","sourceUrl":"https://fsachamber.chambermaster.com/events/details/chamber-community-expo-6144","time":"4:00 PM \u2013 7:00 PM","title":"Chamber Community Expo","town":"Franklin"},{"category":"Community","contact":"Kristen Chaney, 757-859-6161","cost":"FREE","date":"2026-11-20","desc":"Food drive at Ivor Medical Center; drop off donations there, and food distribution runs from 10 AM until food is gone, first come, first served. Donations of new hygiene products are also being taken.","details":"Note: No Time field on the listing; Date/Time Information reads 11/20/2026 from 10:00 AM until food is gone. Entered as an all-day event.","id":"ch-22-thanksgiving-food-drive","place":"Ivor Medical Center, 8575 Ivor Road, Ivor, VA 23866","short":"Thanksgiving Food Drive","sourceUrl":"https://fsachamber.chambermaster.com/events/details/thanksgiving-food-drive-6244","time":"All day","title":"Thanksgiving Food Drive","town":"Ivor"},{"category":"Arts & Culture","contact":"757-653-0754, rawlsarts@gmail.com","cost":"Members $35, Non-Members $45","date":"2026-11-21","desc":"Create a one-of-a-kind painting using acrylic paint, various papers, and decoupage in this fun workshop with Sandy Waters; students are encouraged to bring a reference photo or subject of their choosing and any favorite paper.","details":"Registration: https://forms.gle/nHdW1d3nzh4KGw3W7","id":"ch-23-paper-painting-class","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/cca7e664e757.jpg","place":"Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837","short":"Paper Painting Class","sourceUrl":"https://fsachamber.chambermaster.com/events/details/paper-painting-class-6235","time":"10:00 AM \u2013 1:00 PM","title":"Paper Painting Class","town":"Courtland"},{"category":"Library","cost":"See organizer","date":"2026-11-24","desc":"Thankful Little Readers Thanksgiving Story Time: a special story time with a fun read-aloud and a festive craft to take home.","details":"Note: The poster spells the date Novemeber 24, 2026.","id":"ch-24-walter-cecil-rawls-thanksgiving-story-","organizer":"Walter Cecil Rawls Library","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/86f5e1463da7.jpg","place":"22511 Main St, Courtland, VA","short":"Walter Cecil Rawls -","sourceUrl":"https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-thanksgiving-story-time-6253","time":"10:00 AM \u2013 11:00 AM","title":"Walter Cecil Rawls - Thanksgiving Story Time","town":"Courtland"},{"category":"Community","cost":"See organizer","date":"2026-11-27","desc":"No further details shown on the Chamber listing - name and date only.","details":"No further details shown on the Chamber listing - name and date only.","id":"ch-25-black-friday","place":"See the Chamber listing for place details","short":"Black Friday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/black-friday-6189","time":"All day","title":"Black Friday"},{"category":"Community","contact":"Send an Email link on the Chamber listing (no name or address shown)","cost":"$50 per team (entry fee must be received no later than November 27, 2026)","date":"2026-11-27","desc":"2026 theme is Santa's Vacation. Teams build a gingerbread house for a good cause; entries are displayed at the Village at Woods Edge Dec 3-14, with online judging Dec 4-14 and an awards reception Dec 14. Every $1 donation counts as one vote for a team's entry.","details":"Registration / payment: https://www.zeffy.com/en-US/ticketing/united-way-gingerbread-house-challenge Website: www.franklinunitedway.org Key dates: register by Nov 27; entry drop-off Dec 3; online judging Dec 4-14; awards and reception Monday, December 14, Village at Woods Edge, 1401 N. High Street, 5:00-7:00 PM. Note: Separate listing from the United Way 2026 Gingerbread House Challenge (Dec 3-14); this one lists the venue as 1401 N. High St.","endDate":"2026-12-14","id":"ch-26-united-way-gingerbread-house-challenge","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/4182aeddbcc6.jpg","place":"The Village at Woods Edge, 1401 N. High St","short":"United Way Gingerbread","sourceUrl":"https://fsachamber.chambermaster.com/events/details/united-way-gingerbread-house-challenge-6257","time":"All day","title":"United Way Gingerbread House Challenge"},{"category":"Community","cost":"See organizer","date":"2026-11-28","desc":"Big deals, small-town style: shop in Franklin and Southampton County for early bird doorbusters, mystery grab bags, and free gifts with purchase while supporting small businesses this holiday season.","details":"Note: The listing's description says Join us for Black Friday shopping in a Small Business Saturday listing - appears to be a copy error in the listing.","id":"ch-27-small-business-saturday","place":"See the Chamber listing for place details","short":"Small Business Saturday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/small-business-saturday-6188","time":"All day","title":"Small Business Saturday"},{"category":"Festivals & Celebrations","contact":"Tobi Snyder, 757-705-2835 (call or text)","cost":"$20 per painting (per canvas)","date":"2026-12-01","desc":"Homeschool Grinch Paint Party, open to the public: paint a male or female Grinch design on a 6-inch x 6-inch canvas (about 2 hours); parents and adults welcome to paint too. Bring your own drink and a snack or appetizer to share.","details":"Registration: https://forms.gle/PqaVXhKLDx7gRTNe6 Note: Registration and prepayment required by November 27; completing the form gets an invoice from the artist. No painting experience necessary.","id":"ch-28-homeschool-paint-event","place":"VFW Post 4411, 3385 Beaverdam Rd, Franklin, VA","short":"Homeschool Paint event","sourceUrl":"https://fsachamber.chambermaster.com/events/details/homeschool-paint-event-6240","time":"10:00 AM \u2013 12:00 PM","title":"Homeschool Paint event","town":"Franklin"},{"category":"Festivals & Celebrations","contact":"Tobi Snyder, 757-705-2835 (call or text)","cost":"$25 (for TWO 3-inch ceramic Christmas ornaments)","date":"2026-12-01","desc":"Christmas Ornament Paint Night, open to the public: paint two 3-inch ceramic Christmas ornaments in a festive evening of painting and Christmas cheer. Bring an appetizer or finger food to share; VFW membership is NOT required.","details":"Registration: https://forms.gle/j5FGmPZur9nJ7vaE9 Note: Registration and prepayment required by November 27; completing the form gets an invoice from the artist. No painting experience necessary.","id":"ch-29-ornament-paint-night","place":"VFW Post 4411, 3385 Beaverdam Rd, Franklin, VA","short":"Ornament Paint Night","sourceUrl":"https://fsachamber.chambermaster.com/events/details/ornament-paint-night-6241","time":"7:00 PM \u2013 9:00 PM","title":"Ornament Paint Night","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"FREE (per poster)","date":"2026-12-03","desc":"City of Franklin Elf Parade followed by the Tree Lighting Ceremony on Thursday, December 3, 2026.","details":"Note: No Time, Location, or Description fields on the listing - all details come from the poster: ELF PARADE starts 6:00 PM at Market on Main; TREE LIGHTING CEREMONY starts 6:30 PM at Barrett's Landing.","id":"ch-30-city-of-franklin-elf-parade-tree-light","organizer":"City of Franklin","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/e86eccb72f4c.jpg","place":"Elf Parade at Market on Main; Tree Lighting Ceremony at Barrett's Landing","short":"City of Franklin Elf","sourceUrl":"https://fsachamber.chambermaster.com/events/details/city-of-franklin-elf-parade-tree-lighting-ceremony-6057","time":"All day","title":"City of Franklin Elf Parade & Tree Lighting Ceremony"},{"category":"Community","cost":"$50 per team","date":"2026-12-03","desc":"2026 theme is Santa's Vacation. Entry fee $50 per team; deadline to register November 27; entry drop-off December 3; judging December 4-14; awards and reception December 14, 5:00-7:00 PM at the Village at Woods Edge.","details":"Website: http://www.franklinunitedway.org Note: Separate listing from the United Way Gingerbread House Challenge (Nov 27-Dec 14); this one lists the venue as 1404 N. High St.","endDate":"2026-12-14","id":"ch-31-united-way-2026-gingerbread-house-chal","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/08326bb22fc9.jpg","place":"The Village at Woods Edge, 1404 N. High St","short":"United Way 2026","sourceUrl":"https://fsachamber.chambermaster.com/events/details/united-way-2026-gingerbread-house-challenge-6206","time":"All day","title":"United Way 2026 Gingerbread House Challenge"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-12-04","desc":"City of Franklin Christmas Parade, Friday, December 4, 2026, starting at 7:00 PM in downtown Franklin. Theme: The Grinch - Whoville. Contact (to participate): BWILKERSON@FRANKLINVA.GOV","details":"City of Franklin Christmas Parade, Friday, December 4, 2026, starting at 7:00 PM in downtown Franklin. Theme: The Grinch - Whoville. Contact (to participate): BWILKERSON@FRANKLINVA.GOV","id":"ch-32-city-of-franklin-christmas-parade","organizer":"City of Franklin","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/592e9fe982a0.jpg","place":"Downtown Franklin","short":"City of Franklin","sourceUrl":"https://fsachamber.chambermaster.com/events/details/city-of-franklin-christmas-parade-6058","time":"7:00 PM \u2013 8:00 PM","title":"City of Franklin Christmas Parade","town":"Franklin"},{"category":"Parade","contact":"CVRS, cvrs@courtlandchristmasparade@gmail.com","cost":"See organizer","date":"2026-12-05","desc":"Courtland Christmas Parade on Main St., Saturday, December 5 at 2 PM.","details":"Note: The listing's description field spells the email cvrs@courtlandchristmaparade@gmail.com (missing the s in christmas); the Contact field and the poster both read cvrs@courtlandchristmasparade@gmail.com.","id":"ch-33-courtland-christmas-parade","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/7232ee4d96a5.jpg","place":"Main St, Courtland, VA","short":"Courtland Christmas","sourceUrl":"https://fsachamber.chambermaster.com/events/details/courtland-christmas-parade-12-05-2026-6259","time":"2:00 PM \u2013 3:00 PM","title":"Courtland Christmas Parade","town":"Courtland"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-11-14","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-34-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-14-2026-4776","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-11-14","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster also lists a Heritage Market Oct 10-Nov 21, 10 AM-1 PM; this date falls in that window, while the listing's field time is 9 AM-12 PM. The listing's text description is stale 2025-season copy and was not used.","id":"ch-35-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-11-14-2026-5176","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-11-17","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-36-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-17-2026-4977","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-11-18","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-37-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-18-2026-5813","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-11-21","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-38-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-21-2026-4777","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-11-21","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster also lists a Heritage Market Oct 10-Nov 21, 10 AM-1 PM; this date is the last Heritage Market day, while the listing's field time is 9 AM-12 PM. The listing's text description is stale 2025-season copy and was not used.","id":"ch-39-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-11-21-2026-5177","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-11-24","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-40-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-24-2026-4978","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-11-25","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-41-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-25-2026-5814","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-11-28","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-42-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-28-2026-4778","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-11-28","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-43-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-11-28-2026-5178","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-12-01","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-44-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-01-2026-4979","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-12-02","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-45-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-02-2026-5815","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-12-05","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-46-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-05-2026-4779","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-12-05","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-47-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-12-05-2026-5179","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-12-08","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-48-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-08-2026-4980","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-12-09","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-49-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-09-2026-5816","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-12-12","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-50-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-12-2026-4780","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-12-12","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-51-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-12-12-2026-5180","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-12-15","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-52-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-15-2026-4981","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-12-16","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-53-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-16-2026-5817","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-12-19","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-54-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-19-2026-4781","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-12-19","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-55-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-12-19-2026-5181","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-12-22","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-56-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-22-2026-4982","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-12-23","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-57-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-23-2026-5818","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2026-12-26","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-58-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-26-2026-4782","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2026-12-26","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-59-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-12-26-2026-5182","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2026-12-29","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-60-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-29-2026-4983","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2026-12-30","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-61-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-30-2026-5819","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festivals & Celebrations","cost":"See organizer","date":"2027-01-02","desc":"Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.","details":"Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.","id":"ch-62-goose-hill-farm-farmers-market","organizer":"Goose Hill Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg","place":"22173 Sedley Road, Franklin","short":"Goose Hill Farm Farmers","sourceUrl":"https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-01-02-2027-4783","time":"9:00 AM \u2013 12:00 PM","title":"Goose Hill Farm Farmers Market","town":"Franklin"},{"category":"Community","cost":"FREE ADMISSION","date":"2027-01-02","desc":"Franklin's Farmers Market at 210 S. Main Street, Franklin, VA, with fresh locally grown produce, baked goods, meats, eggs, jams and jellies, honey, pickles, and handmade artisan crafts. Saturdays 9 AM-12 PM.","details":"Note: The 2026 poster lists the Saturday season ending Oct 3 and the Heritage Market ending Nov 21, yet this date is still listed at 9 AM-12 PM. Whether the market is actually running this date is unverified. The listing's text description is stale 2025-season copy and was not used.","id":"ch-63-franklin-s-market-on-main","organizer":"Franklin's Market on Main","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b9ebc1d058a6.jpg","place":"210 S. Main St, Franklin","short":"Franklin's Market on Main","sourceUrl":"https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-01-02-2027-5183","time":"9:00 AM \u2013 12:00 PM","title":"Franklin's Market on Main","town":"Franklin"},{"category":"Arts & Culture","contact":"Send an Email link on the Chamber listing (no address shown)","cost":"See organizer","date":"2027-01-05","desc":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","details":"River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.","id":"ch-64-river-road-farm-tuesday-markets","organizer":"River Road Farm","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg","place":"River Road Farm, 1300 N. High St, Franklin","short":"River Road Farm Tuesday","sourceUrl":"https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-05-2027-4984","time":"4:30 PM \u2013 6:00 PM","title":"River Road Farm Tuesday Markets","town":"Franklin"},{"category":"Community","contact":"757-452-2737","cost":"Free","date":"2027-01-06","desc":"Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.","details":"Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.","id":"ch-65-odu-community-care-free-medical-care","organizer":"ODU Community Care","place":"J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA","short":"ODU Community Care - Free","sourceUrl":"https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-01-06-2027-5820","time":"9:00 AM \u2013 3:30 PM","title":"ODU Community Care - Free Medical Care","town":"Franklin"},{"category":"Festival","cost":"See organizer","date":"2026-11-07","desc":"Intertribal corn harvest powwow with dancing, vendors, and food on the tribe's land at Cattashowrock Town.","details":"Two-day event: Saturday, November 7 \u2013 Sunday, November 8, 2026, starting at 10:00 AM both days.","endDate":"2026-11-08","id":"sw-cheroenhaka-corn-harvest-powwow","organizer":"Cheroenhaka (Nottoway) Indian Tribe","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/909415e5464a.jpg","place":"Cattashowrock Town, 27345 Aquia Path (Route 742 South), Courtland, VA","short":"Corn Harvest Powwow","sourceName":"Powwows.com","sourceUrl":"https://www.powwows.com/pow-wow-calendar-weekly-update/","time":"10:00 AM","title":"38th Annual Cheroenhaka (Nottoway) Indian Tribe Corn Harvest Powwow","town":"Courtland"},{"category":"Community","cost":"See organizer","date":"2026-11-08","desc":"A car cruise event on College Drive.","details":"Details are from the indexed listing; the live page had already rolled past today.","id":"sw-college-drive-crank-and-cruise","place":"College Drive, 351 N College Dr, Franklin, VA","short":"Crank and Cruise","sourceName":"ThisTown Franklin","sourceUrl":"https://franklin-va.thistown.news/","time":"2:00 PM","title":"College Drive Crank and Cruise","town":"Franklin"},{"category":"Community","cost":"See organizer","date":"2026-11-11","desc":"The city's Veterans Day observance, starting with a 7 AM gathering and Honor Walk/Run at Blackwater Park.","details":"Starts with a 7:00 AM gathering and Honor Walk/Run at Blackwater Park.","id":"sw-franklin-veterans-day-celebration","organizer":"City of Franklin","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/fa00baa9ce31.jpg","photoAi":true,"place":"Blackwater Park, 1716 N. High St, Franklin, VA","short":"Veterans Day Celebration","sourceName":"Visit Franklin Southampton VA","sourceUrl":"https://www.visitfranklinsouthamptonva.com/","time":"7:00 AM","title":"City of Franklin Veterans Day Celebration","town":"Franklin"},{"category":"Workshop","cost":"Free","date":"2026-11-11","desc":"A free farm workshop on planning for calving, checking fences, and herd health for the coming year.","details":"Free workshop covering planning for calving, checking fences, and herd health for the coming year.","id":"sw-herd-health-forage-workshop","organizer":"Virginia Cooperative Extension / Virginia State University","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/a4441f66efa5.jpg","place":"Southampton County Cooperative Extension Office, 21300 Plank Rd, Courtland, VA","short":"Herd Health Workshop","sourceName":"Virginia State University Extension","sourceUrl":"https://www.ext.vsu.edu/events","time":"9:00 AM \u2013 12:00 PM","title":"Herd Health and Forage Improvement for Animal Production","town":"Courtland"},{"category":"Workshop","cost":"See organizer","date":"2026-11-12","desc":"A workshop on becoming an approved childcare educator/operator.","details":"A workshop on becoming an approved childcare educator/operator.","id":"sw-childcare-educator-operator-workshop","organizer":"U-LAUNCH: IT","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/3b8d4d154399.jpg","place":"Franklin Southampton Economic Development, Inc., 601 N Mechanic St, Franklin, VA","short":"Childcare CEO Workshop","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/events/","time":"10:30 AM","title":"Become an Approved Childcare Educator Operator (CEO)","town":"Franklin"},{"category":"Fundraiser","cost":"$20 plus a new $10 toy to enter","date":"2026-11-21","desc":"A 'Merry Grinchmas' Jeep show and shine and toy drive; $20 plus a new $10 toy to enter, raffles and a 50/50, open to the public.","details":"Registration 9:00 AM, judging at noon. Sponsored by Hubbard Peanut Company. Raffles and a 50/50; open to the public.","id":"sw-jeep-jingle-toy-drive","organizer":"FOP Lodge #56 / Blackwater Jeepers of VA","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b89fc715625b.jpg","photoAi":true,"place":"The Hubs Vine, 1459 Armory Dr, Franklin, VA","short":"Jeep Jingle Toy Drive","sourceName":"Facebook","sourceUrl":"https://www.facebook.com/permalink.php?story_fbid=pfbid023j7iQtYwekwFj2t2diCuY7Ws84ZYTdMKXbof7vWCtdZ9FmFTGWoxwGp1vnfwPc1il&id=100088219271296","time":"10:00 AM \u2013 3:00 PM","title":"4th Annual Jeep Jingle FOP Trooper Hill Toy Drive Show and Shine","town":"Franklin"},{"category":"Community","cost":"Tickets from $7.18","date":"2026-11-21","desc":"Scholarship pageant crowning Miss Southeastern Virginia, Miss Greater Hampton Roads, and Miss Southampton County, emceed by Miss Virginia 2026 Maddie Marchant; tickets from $7.18.","details":"Crowns Miss Southeastern Virginia, Miss Greater Hampton Roads, and Miss Southampton County. Emceed by Miss Virginia 2026 Maddie Marchant.","id":"sw-miss-southeastern-va-pageant","organizer":"Miss Southeastern Virginia Scholarship Organization","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/eb21cc32ad56.jpg","place":"Southampton High School, 23350 Southampton Parkway, Courtland, VA","short":"Miss Southeastern VA","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/vsu","time":"3:00 PM","title":"Miss Southeastern VA Pageant","town":"Courtland"},{"category":"Community","cost":"See organizer","date":"2026-11-21","desc":"An evening trail ride and bonfire gathering.","details":"Evening trail ride and bonfire gathering. Town listed as Southampton County; exact town not stated in the listing.","id":"sw-ultimate-trailride-bonfire","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/d9c6336dfd60.jpg","place":"12311 Tucker Swamp Rd, Southampton County, VA","short":"Trailride Bonfire","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/events/","time":"5:00 PM","title":"The Ultimate Trailride Bonfire Edition","town":"Southampton County"},{"category":"Concert","cost":"See organizer","date":"2026-11-27","desc":"A benefit concert for the Young Farmers Club with Tamara Wellons performing.","details":"A benefit concert for the Young Farmers Club with Tamara Wellons performing.","id":"sw-young-farmers-benefit-concert","organizer":"Her Dreams Productions","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/cc99ea1f1131.jpg","place":"Sportsman Association, 1431 South St, Franklin, VA","short":"Young Farmers Concert","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/events/","time":"6:00 PM","title":"Young Farmers Club Benefit Concert featuring Tamara Wellons","town":"Franklin"},{"category":"Community","cost":"See organizer","date":"2026-11-28","desc":"A Southern soul homecoming field party.","details":"A Southern soul homecoming field party.","id":"sw-mr-step-outs-field-party","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/8f9bdaadc017.jpg","place":"33498 Lawrence Dr, Franklin, VA","short":"Southern Soul Field Party","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/events/","time":"4:00 PM","title":"MR. STEP OUTS HOMECOMING SOUTHERN SOUL FIELD PARTY","town":"Franklin"},{"category":"Community","cost":"See organizer","date":"2026-12-19","desc":"An evening celebration-of-life gathering at the fairgrounds.","details":"An evening celebration-of-life gathering at the fairgrounds.","id":"sw-58-ball-celebration-of-life","photo":"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2551ef65abf0.jpg","place":"Southampton County Fair, 25374 New Market Rd, Courtland, VA","short":"58 Ball Celebration","sourceName":"Eventbrite","sourceUrl":"https://www.eventbrite.com/d/va--franklin/events/","time":"8:00 PM","title":"58 Ball Celebration Of Life","town":"Courtland"}];
+var EVENTS = EVENTS_FALLBACK;;
+function esc(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+function parseDate(s){ var p=s.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+function fmtDate(d){ return d.toLocaleDateString("en-US",{weekday:"short", month:"short", day:"numeric", year:"numeric"}); }
+function mapsUrl(place){ return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(place); }
+function pad2(n){ return String(n).padStart(2,"0"); }
+function basicDate(d){ return d.getFullYear() + pad2(d.getMonth()+1) + pad2(d.getDate()); }
+function basicDateTime(d){ return basicDate(d) + "T" + pad2(d.getHours()) + pad2(d.getMinutes()) + "00"; }
+/* Pull clock times out of a listing's time string ("9:00 AM – 12:00 PM",
+   "Starts 6:30 PM", "12:30 PM"). Returns {start:Date, end:Date} on the event's
+   date, or null for all-day / unparseable times. A lone start time gets a
+   one-hour block so calendar apps show something sensible. */
+function parseTimes(ev){
+  if(!ev.time || /all day/i.test(ev.time)) return null;
+  var re = /(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/gi, m, found = [];
+  while((m = re.exec(ev.time)) !== null){
+    var h = parseInt(m[1], 10) % 12;
+    if(/pm/i.test(m[3])) h += 12;
+    found.push({ h:h, min: parseInt(m[2] || "0", 10) });
+  }
+  if(!found.length) return null;
+  var base = parseDate(ev.date);
+  var start = new Date(base.getFullYear(), base.getMonth(), base.getDate(), found[0].h, found[0].min);
+  var end;
+  if(found.length > 1){ end = new Date(base.getFullYear(), base.getMonth(), base.getDate(), found[1].h, found[1].min); }
+  else { end = new Date(start.getTime() + 60*60*1000); }
+  if(end <= start) end = new Date(start.getTime() + 60*60*1000);
+  return { start:start, end:end };
+}
+function gcalUrl(ev){
+  var dates;
+  var t = (!ev.endDate) ? parseTimes(ev) : null;
+  if(t){ dates = basicDateTime(t.start) + "/" + basicDateTime(t.end); }
+  else {
+    var d = basicDate(parseDate(ev.date));
+    var end = d;
+    if(ev.endDate){ var ed = parseDate(ev.endDate); ed.setDate(ed.getDate()+1); end = basicDate(ed); }
+    else { var nd = parseDate(ev.date); nd.setDate(nd.getDate()+1); end = basicDate(nd); }
+    dates = d + "/" + end;
+  }
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(ev.title) + "&dates=" + dates + "&details=" + encodeURIComponent(ev.desc + " — Listed on the Whittington Station Community Events Calendar.") + "&location=" + encodeURIComponent(ev.place);
+}
+function icsEscape(s){ return String(s == null ? "" : s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n"); }
+function buildIcs(ev){
+  var lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Whittington Station//Community Events Calendar//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VEVENT"];
+  var stamp = new Date();
+  var dtstamp = stamp.getUTCFullYear() + pad2(stamp.getUTCMonth()+1) + pad2(stamp.getUTCDate()) + "T" + pad2(stamp.getUTCHours()) + pad2(stamp.getUTCMinutes()) + pad2(stamp.getUTCSeconds()) + "Z";
+  lines.push("UID:" + ev.id + "@whittington-station-calendar");
+  lines.push("DTSTAMP:" + dtstamp);
+  var t = (!ev.endDate) ? parseTimes(ev) : null;
+  if(t){
+    lines.push("DTSTART:" + basicDateTime(t.start));
+    lines.push("DTEND:" + basicDateTime(t.end));
+  } else {
+    lines.push("DTSTART;VALUE=DATE:" + basicDate(parseDate(ev.date)));
+    var last = ev.endDate ? parseDate(ev.endDate) : parseDate(ev.date);
+    last.setDate(last.getDate()+1);
+    lines.push("DTEND;VALUE=DATE:" + basicDate(last));
+  }
+  lines.push("SUMMARY:" + icsEscape(ev.title));
+  lines.push("LOCATION:" + icsEscape(ev.place));
+  var body = ev.desc + (ev.organizer ? " Organizer: " + ev.organizer + "." : "") + (ev.cost ? " Cost: " + ev.cost + "." : "") + " Listed on the Whittington Station Community Events Calendar.";
+  lines.push("DESCRIPTION:" + icsEscape(body));
+  if(ev.sourceUrl) lines.push("URL:" + ev.sourceUrl);
+  lines.push("END:VEVENT","END:VCALENDAR");
+  return lines.join("\r\n") + "\r\n";
+}
+function downloadIcs(ev){
+  var blob = new Blob([buildIcs(ev)], { type:"text/calendar;charset=utf-8" });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = ev.id + ".ics";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+  showToast("Calendar file downloaded — open it to add “" + ev.title + "” to your calendar.");
+}
+var toastTimer = null;
+function showToast(msg){
+  var el = document.getElementById("toast");
+  if(!el) return;
+  el.textContent = msg;
+  el.classList.add("show");
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2600);
+}
+function calendarEventUrl(ev){
+  var hash = "#ev-" + ev.id;
+  try {
+    var href = window.location && window.location.href ? String(window.location.href) : "";
+    if(href) return href.split("#")[0] + hash;
+  } catch(e){}
+  return hash;
+}
+var currentShareUrl = "";
+var lastShareTrigger = null;
+function shareEvent(ev){
+  var calendarUrl = calendarEventUrl(ev);
+  currentShareUrl = calendarUrl;
+  lastShareTrigger = document.activeElement;
+  var backdrop = document.getElementById("shareBackdrop");
+  var nameEl = document.getElementById("shareEventName");
+  var input = document.getElementById("shareLinkInput");
+  var copiedEl = document.getElementById("shareCopied");
+  if(nameEl) nameEl.textContent = ev.title + " — " + dateLabel(ev) + ", " + ev.time;
+  if(input){ input.value = calendarUrl; }
+  if(copiedEl) copiedEl.textContent = "";
+  if(backdrop) backdrop.classList.remove("hidden");
+  if(input){
+    setTimeout(function(){
+      try { input.focus(); input.select(); } catch(e){}
+    }, 30);
+  }
+}
+function closeShareDialog(){
+  var backdrop = document.getElementById("shareBackdrop");
+  if(backdrop) backdrop.classList.add("hidden");
+  if(lastShareTrigger && typeof lastShareTrigger.focus === "function"){
+    try { lastShareTrigger.focus(); } catch(e){}
+  }
+}
+function copyShareLink(){
+  var input = document.getElementById("shareLinkInput");
+  var copiedEl = document.getElementById("shareCopied");
+  var url = currentShareUrl || (input ? input.value : "");
+  function done(){
+    if(copiedEl) copiedEl.textContent = "Link copied — paste it anywhere to share this event.";
+    if(input){ try { input.focus(); input.select(); } catch(e){} }
+  }
+  function notCopied(){
+    if(input){ try { input.focus(); input.select(); } catch(e){} }
+    if(copiedEl) copiedEl.textContent = "Press and hold the link above, then tap Copy.";
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done, function(){
+      if(legacyCopy(url)) done(); else notCopied();
+    });
+  } else if(legacyCopy(url)){
+    done();
+  } else {
+    notCopied();
+  }
+}
+(function(){
+  var copyBtn = document.getElementById("shareCopyBtn");
+  var closeBtn = document.getElementById("shareCloseBtn");
+  var backdrop = document.getElementById("shareBackdrop");
+  var input = document.getElementById("shareLinkInput");
+  if(copyBtn) copyBtn.addEventListener("click", copyShareLink);
+  if(closeBtn) closeBtn.addEventListener("click", closeShareDialog);
+  if(backdrop) backdrop.addEventListener("click", function(e){ if(e.target === backdrop) closeShareDialog(); });
+  if(input) input.addEventListener("click", function(){ try { input.select(); } catch(e){} });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && backdrop && !backdrop.classList.contains("hidden")) closeShareDialog();
+  });
+})();
+function legacyCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  var ok = false;
+  try { ok = !!document.execCommand("copy"); } catch(e){ ok = false; }
+  document.body.removeChild(ta);
+  return ok;
+}
+function findEvent(id){
+  for(var i=0;i<EVENTS.length;i++){ if(EVENTS[i].id===id) return EVENTS[i]; }
+  return null;
+}
+function dateLabel(ev){
+  var d = parseDate(ev.date);
+  if(ev.endDate){ return fmtDate(d) + " – " + fmtDate(parseDate(ev.endDate)); }
+  return fmtDate(d);
+}
+function eventStart(ev){ return parseDate(ev.date); }
+function eventEnd(ev){ return ev.endDate ? parseDate(ev.endDate) : parseDate(ev.date); }
+function isUpcoming(ev){ return eventEnd(ev) >= TODAY; }
+function eventOnDay(ev, day){
+  var d = new Date(day.getFullYear(), day.getMonth(), day.getDate());
+  return eventStart(ev) <= d && d <= eventEnd(ev);
+}
+var state = { view:"list", range:"all", q:"", town:"", weekStart: (function(){ var d = startOfToday(); d.setDate(d.getDate() - d.getDay()); return d; })(), monthCursor: new Date(TODAY.getFullYear(), TODAY.getMonth(), 1) };
+/* The Friday–Sunday span people mean by "this weekend": if today is Friday,
+   Saturday, or Sunday it is the current one, otherwise the next one coming. */
+function weekendBounds(){
+  var dow = TODAY.getDay(); // 0 Sun … 5 Fri, 6 Sat
+  var toFriday = (dow === 5) ? 0 : (dow === 6) ? -1 : (dow === 0) ? -2 : (5 - dow);
+  var start = new Date(TODAY); start.setDate(start.getDate() + toFriday);
+  var end = new Date(start); end.setDate(end.getDate() + 2);
+  return { start:start, end:end };
+}
+function rangeLabelText(){
+  if(state.range==="tonight") return "happening tonight, " + fmtDate(TODAY);
+  if(state.range==="weekend"){ var w = weekendBounds(); return "this weekend, " + fmtDate(w.start) + " – " + fmtDate(w.end); }
+  if(state.range==="7") return "in the next 7 days";
+  if(state.range==="30") return "in the next 30 days";
+  return "coming up";
+}
+function filtered(){
+  return EVENTS.filter(function(ev){
+    // Automatic retirement: an event drops off as soon as its last day is before today.
+    // A multi-day event stays listed until its endDate has passed, not its start date.
+    if(!isUpcoming(ev)) return false;
+    if(state.range==="tonight" && !eventOnDay(ev, TODAY)) return false;
+    if(state.range==="weekend"){ var w = weekendBounds(); if(eventEnd(ev) < w.start || eventStart(ev) > w.end) return false; }
+    var diff = Math.round((eventStart(ev) - TODAY)/86400000);
+    if(state.range==="7" && diff > 6) return false;
+    if(state.range==="30" && diff > 29) return false;
+    if(state.town && ev.town !== state.town) return false;
+    if(state.q){
+      var hay = (ev.title+" "+ev.town+" "+ev.place+" "+ev.organizer+" "+ev.category+" "+ev.desc).toLowerCase();
+      if(hay.indexOf(state.q.toLowerCase())===-1) return false;
+    }
+    return true;
+  }).sort(function(a,b){ return parseDate(a.date)-parseDate(b.date); });
+}
+var CONTACT = 'Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.';
+var PROMOS = [
+  { para:"Flyers, business cards, and banners, printed right here in Boykins and ready when you need them." },
+  { para:"Menus, programs, and brochures that make your business look as good as the day itself, printed right here in Boykins." },
+  { para:"Labels, stickers, and roadside signs that get your name seen all around Franklin and Southampton County." },
+  { para:"Got an event coming up? We print the posters, banners, and handouts that fill the room." },
+  { para:"Full-color printing and design help, with a fast local turnaround, right here in town." },
+  { para:"Helping local businesses grow for more than 40 years, one printed piece at a time." }
+];
+function promoStrip(i){
+  var p = PROMOS[i % PROMOS.length];
+  return '<aside class="promo-strip" aria-label="From the print shop">'
+    + '<span class="promo-graphic"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy" /></span>'
+    + '<div class="promo-copy"><p>' + p.para + ' ' + CONTACT + '</p></div>'
+    + '</aside>';
+}
+function renderList(){
+  var list = filtered();
+  var el = document.getElementById("eventList");
+  var rangeLabel = rangeLabelText();
+  document.getElementById("countLine").innerHTML = "<strong>" + list.length + "</strong> event" + (list.length===1?"":"s") + " " + rangeLabel + " • as of " + fmtDate(TODAY);
+  if(!list.length){ el.innerHTML = '<div class="empty-state">No events match that search in this range. Try “All upcoming,” tap “Surprise me” for a random pick, or <a href="#submit" style="font-weight:800">submit the event you are looking for</a> if it should be listed.</div>'; return; }
+  var cards = list.map(function(ev){
+    var d = parseDate(ev.date);
+    var dow = d.toLocaleDateString("en-US",{weekday:"short"});
+    var mon = d.toLocaleDateString("en-US",{month:"short"});
+    var photo = ev.photo ? '<figure class="event-photo"><a href="'+esc(ev.photo)+'" target="_blank" rel="noopener" data-lightbox="1" data-title="'+esc(ev.title)+'" data-ai="'+(ev.photoAi ? '1' : '')+'"><img src="'+esc(ev.photo)+'" alt="'+(ev.photoAi ? 'AI illustration for ' : 'Photo or flyer for ')+esc(ev.title)+'" loading="lazy" /></a><span class="cap">'+(ev.photoAi ? 'AI illustration &mdash; a generic illustration created for this listing because no organizer photo was available. It is not the organizer&rsquo;s flyer or a photo of the real event. Tap to view full size.' : (ev.sourceName ? 'Photo from the listing source. Tap to view full size.' : 'Photo from the organizer&rsquo;s Chamber calendar listing. Tap to view full size.'))+'</span></figure>' : '';
+    var sourceTag = ev.sourceName ? '<span class="tag verify">Source: '+esc(ev.sourceName)+'</span>' : (ev.sourceUrl ? '<span class="tag verify">From the Chamber events calendar</span>' : '<span class="tag verify">Community listing — confirm with organizer</span>');
+    // "Featured in Eric's video" badge: renders only when the event carries a videoUrl.
+    var videoBadge = ev.videoUrl ? '<a class="video-badge" href="'+esc(ev.videoUrl)+'" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▶</span> Featured in Eric&rsquo;s video — watch it</a>' : '';
+    var detailActions = '<div class="details-actions">'
+      + (ev.videoUrl ? '<a class="link-btn" href="'+esc(ev.videoUrl)+'" target="_blank" rel="noopener">▶ Watch Eric&rsquo;s video ↗</a>' : '')
+      + '<button type="button" class="link-btn addcal" data-ics="'+esc(ev.id)+'">Add to calendar</button>'
+      + '<a class="link-btn" target="_blank" rel="noopener" href="'+gcalUrl(ev)+'">Google Calendar ↗</a>'
+      + '<button type="button" class="link-btn" data-share="'+esc(ev.id)+'">Share</button>'
+      + '<a class="link-btn" target="_blank" rel="noopener" href="'+mapsUrl(ev.place)+'">Directions ↗</a>'
+      + '</div>';
+    return '<article class="event-card'+(ev.photo ? '' : ' no-photo')+'" id="ev-'+esc(ev.id)+'">'
+      + '<div class="date-box"><div class="dow">'+dow+'</div><div class="day">'+d.getDate()+'</div><div class="mon">'+mon+' '+d.getFullYear()+'</div></div>'
+      + photo + '<div class="event-body">' + videoBadge + '<h3>'+esc(ev.title)+'</h3>'
+      + '<div class="meta"><span>🕐 <b>'+esc(ev.time)+'</b></span><span>📍 '+esc(ev.place)+'</span></div>'
+      + '<p class="desc">'+esc(ev.desc)+'</p>'
+      + '<div class="tags"><span class="tag">'+esc(ev.category)+'</span>' + (ev.town ? '<span class="tag">'+esc(ev.town)+'</span>' : '') + sourceTag + '</div>'
+      + '<div class="card-actions"><button type="button" class="link-btn" data-details="'+esc(ev.id)+'">Details ▾</button>'
+      + '<button type="button" class="link-btn addcal" data-ics="'+esc(ev.id)+'">Add to calendar</button>'
+      + '<button type="button" class="link-btn" data-share="'+esc(ev.id)+'">Share</button>'
+      + '<a class="link-btn" target="_blank" rel="noopener" href="'+mapsUrl(ev.place)+'">Directions ↗</a>'
+      + '<a class="link-btn" target="_blank" rel="noopener" href="'+gcalUrl(ev)+'">Google Calendar ↗</a>'
+      + (ev.sourceUrl ? '<a class="link-btn" target="_blank" rel="noopener" href="'+esc(ev.sourceUrl)+'">'+esc(ev.sourceName ? ev.sourceName + ' listing' : 'Chamber listing')+' ↗</a>' : '')
+      + '</div>'
+      + '<div class="details" id="details-'+esc(ev.id)+'"><dl>'
+      + '<dt>Date</dt><dd>'+esc(dateLabel(ev))+'</dd>'
+      + '<dt>Time</dt><dd>'+esc(ev.time)+'</dd>'
+      + '<dt>Place</dt><dd>'+esc(ev.place)+'</dd>'
+      + (ev.organizer ? '<dt>Organizer</dt><dd>'+esc(ev.organizer)+'</dd>' : '')
+      + (ev.contact ? '<dt>Contact</dt><dd>'+esc(ev.contact)+'</dd>' : '')
+      + '<dt>Cost</dt><dd>'+esc(ev.cost)+'</dd>'
+      + '<dt>Notes</dt><dd>'+esc(ev.details)+'</dd>'
+      + (ev.sourceUrl ? '<dt>Source</dt><dd>'+esc(ev.sourceName ? ev.sourceName : 'Franklin-Southampton Area Chamber of Commerce Events Calendar')+' — <a href="'+esc(ev.sourceUrl)+'" target="_blank" rel="noopener">view the original listing</a></dd>' : '')
+      + '</dl>' + detailActions + '</div></div></article>';
+  });
+  // A thin Whittington Station promo strip after every 4 events (never after the last one),
+  // rotating through the PROMOS messages as you scroll.
+  var html = ""; var promoIdx = 0;
+  cards.forEach(function(card, i){
+    html += card;
+    if((i + 1) % 4 === 0 && i < cards.length - 1){ html += promoStrip(promoIdx++); }
+  });
+  el.innerHTML = html;
+  var btns = el.querySelectorAll("[data-details]");
+  for(var i=0;i<btns.length;i++){ btns[i].addEventListener("click", function(){ toggleDetails(this.getAttribute("data-details")); }); }
+  bindEventActions(el);
+}
+function bindEventActions(root){
+  var ics = root.querySelectorAll("[data-ics]");
+  for(var i=0;i<ics.length;i++){ ics[i].addEventListener("click", function(){ var ev = findEvent(this.getAttribute("data-ics")); if(ev) downloadIcs(ev); }); }
+  var shares = root.querySelectorAll("[data-share]");
+  for(var j=0;j<shares.length;j++){ shares[j].addEventListener("click", function(){ var ev = findEvent(this.getAttribute("data-share")); if(ev) shareEvent(ev); }); }
+}
+function toggleDetails(id){
+  var box = document.getElementById("details-"+id);
+  if(box) box.classList.toggle("open");
+}
+function jumpToEvent(id){
+  state.view="list"; state.range="all"; state.q=""; state.town="";
+  var qEl = document.getElementById("q"); if(qEl) qEl.value = "";
+  var tEl = document.getElementById("town"); if(tEl) tEl.value = "";
+  syncControls(); renderAll();
+  setTimeout(function(){
+    var card = document.getElementById("ev-"+id);
+    if(card){
+      card.scrollIntoView({behavior:"smooth", block:"center"});
+      var d=document.getElementById("details-"+id); if(d) d.classList.add("open");
+      card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash");
+      setTimeout(function(){ card.classList.remove("flash"); }, 2400);
+    }
+  }, 50);
+}
+function surpriseMe(){
+  // Pick from every upcoming event, ignoring the current filters, so small
+  // events that would never get clicked still get surfaced.
+  var pool = EVENTS.filter(isUpcoming);
+  if(!pool.length){ showToast("No upcoming events to pick from yet."); return; }
+  var ev = pool[Math.floor(Math.random() * pool.length)];
+  jumpToEvent(ev.id);
+  showToast("Surprise pick: " + ev.title + " — " + dateLabel(ev));
+}
+function renderWeek(){
+  var start = new Date(state.weekStart);
+  var end = new Date(start); end.setDate(end.getDate()+6);
+  document.getElementById("weekTitle").textContent = start.toLocaleDateString("en-US",{month:"short",day:"numeric"}) + " – " + end.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+  var grid = document.getElementById("weekGrid"); var html="";
+  for(var i=0;i<7;i++){
+    var d = new Date(start); d.setDate(d.getDate()+i);
+    var key = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+    var dayEvents = filtered().filter(function(ev){ return eventOnDay(ev, d); });
+    var isToday = d.getTime()===TODAY.getTime();
+    html += '<div class="week-col'+(isToday?" today":"")+'"><h4>'+d.toLocaleDateString("en-US",{weekday:"long"})+(isToday?" • Today":"")+'</h4><div class="wnum">'+d.getDate()+'</div>';
+    if(dayEvents.length){ dayEvents.forEach(function(ev){ html += '<button type="button" class="ev" data-jump="'+esc(ev.id)+'">'+esc(ev.time)+'<br>'+esc(ev.title)+'<br><span style="font-weight:600;color:var(--muted)">'+esc(ev.town || "")+'</span></button>'; }); }
+    else { html += '<p class="empty">No events listed</p>'; }
+    html += '</div>';
+  }
+  grid.innerHTML = html;
+  bindJumps(grid);
+}
+function renderMonth(){
+  var cur = state.monthCursor;
+  document.getElementById("monthTitle").textContent = cur.toLocaleDateString("en-US",{month:"long", year:"numeric"});
+  var dow = document.getElementById("monthDow");
+  dow.innerHTML = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(function(x){ return '<div class="dow-head">'+x+'</div>'; }).join("");
+  var first = new Date(cur.getFullYear(), cur.getMonth(), 1);
+  var startDay = first.getDay();
+  var gridStart = new Date(first); gridStart.setDate(gridStart.getDate()-startDay);
+  var grid = document.getElementById("monthGrid"); var html="";
+  var all = filtered();
+  for(var i=0;i<42;i++){
+    var d = new Date(gridStart); d.setDate(d.getDate()+i);
+    var key = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+    var out = d.getMonth()!==cur.getMonth();
+    var isToday = d.getTime()===TODAY.getTime();
+    var dayEvents = all.filter(function(ev){ return eventOnDay(ev, d); });
+    html += '<div class="cell'+(out?" out":"")+(isToday?" today":"")+'"><span class="num">'+d.getDate()+(isToday?" •":"")+'</span>';
+    dayEvents.forEach(function(ev){ html += '<button type="button" class="ev" data-jump="'+esc(ev.id)+'">'+esc(ev.short||ev.title)+'</button>'; });
+    html += '</div>';
+    if(i>=34 && d.getMonth()!==cur.getMonth() && d.getDay()===6) break;
+  }
+  grid.innerHTML = html;
+  bindJumps(grid);
+}
+function bindJumps(root){
+  var btns = root.querySelectorAll("[data-jump]");
+  for(var i=0;i<btns.length;i++){ btns[i].addEventListener("click", function(){ jumpToEvent(this.getAttribute("data-jump")); }); }
+}
+function renderAll(){
+  document.getElementById("listView").classList.toggle("hidden", state.view!=="list");
+  document.getElementById("weekView").classList.toggle("hidden", state.view!=="week");
+  document.getElementById("monthView").classList.toggle("hidden", state.view!=="month");
+  if(state.view==="list") renderList();
+  if(state.view==="week"){ renderListCountOnly(); renderWeek(); }
+  if(state.view==="month"){ renderListCountOnly(); renderMonth(); }
+}
+function renderListCountOnly(){
+  var list = filtered();
+  var rangeLabel = rangeLabelText();
+  document.getElementById("countLine").innerHTML = "<strong>" + list.length + "</strong> event" + (list.length===1?"":"s") + " " + rangeLabel + " • as of " + fmtDate(TODAY) + " • tap an event to see details";
+}
+function syncControls(){
+  document.querySelectorAll("[data-view]").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-view")===state.view ? "true":"false"); });
+  document.querySelectorAll("[data-range]").forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-range")===state.range ? "true":"false"); });
+}
+document.querySelectorAll("[data-view]").forEach(function(b){ b.addEventListener("click", function(){ state.view=b.getAttribute("data-view"); syncControls(); renderAll(); }); });
+document.querySelectorAll("[data-range]").forEach(function(b){ b.addEventListener("click", function(){ state.range=b.getAttribute("data-range"); syncControls(); renderAll(); }); });
+document.querySelectorAll(".js-surprise").forEach(function(b){ b.addEventListener("click", function(){ surpriseMe(); }); });
+document.getElementById("q").addEventListener("input", function(){ state.q=this.value.trim(); renderAll(); });
+document.getElementById("town").addEventListener("change", function(){ state.town=this.value; renderAll(); });
+document.getElementById("weekPrev").addEventListener("click", function(){ state.weekStart.setDate(state.weekStart.getDate()-7); renderWeek(); });
+document.getElementById("weekNext").addEventListener("click", function(){ state.weekStart.setDate(state.weekStart.getDate()+7); renderWeek(); });
+document.getElementById("monthPrev").addEventListener("click", function(){ state.monthCursor = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth()-1, 1); renderMonth(); });
+document.getElementById("monthNext").addEventListener("click", function(){ state.monthCursor = new Date(state.monthCursor.getFullYear(), state.monthCursor.getMonth()+1, 1); renderMonth(); });
+syncControls(); renderAll();
+// If the page was opened from a shared event link (#ev-<id>), jump to that card
+// so the link lands on the event itself, not just the top of the calendar.
+function jumpFromHash(){
+  var h = "";
+  try { h = window.location.hash || ""; } catch(e){ h = ""; }
+  if(h.indexOf("#ev-") === 0){
+    var sharedId = h.slice(4);
+    try { sharedId = decodeURIComponent(sharedId); } catch(e){}
+    if(sharedId && findEvent(sharedId)) jumpToEvent(sharedId);
+  }
+}
+jumpFromHash();
+
+/* Live events: the calendar's data lives in a file on GitHub, so new events
+   show up here without re-uploading this page. The page already rendered the
+   built-in copy above, so it is never blank. If the live file loads, swap it
+   in and re-render; if it fails (offline, GitHub down), keep the built-in
+   copy. One approval tap a day covers the file update; the page itself never
+   needs re-uploading for an event change. */
+(function(){
+  if(!window.fetch) return;
+  /* Fetch the live events file with a cache-buster (Eric, Nov 9, 2026): without it,
+     the browser and GitHub's cache can keep showing the old events for minutes
+     after an update, which left a broken photo on the page even after the data
+     was fixed. The ?v= timestamp makes every load fetch fresh, so event adds
+     and fixes show up right away. The file is small, and the page renders
+     instantly from the built-in copy above, so there is no downside. */
+  fetch("https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/events.json?v=" + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error("events file unavailable"); return r.json(); })
+    .then(function(data){
+      if(!data || !data.events || !data.events.length) return;
+      EVENTS = data.events;
+      renderAll();
+      jumpFromHash();
+    })
+    .catch(function(){ /* keep the built-in copy */ });
+})();
+
+// Photo popup: tapping a thumbnail opens the full-size photo in a popup on the page,
+// so the visitor stays on the calendar. Close with the X, the backdrop, or Escape.
+// If JS fails, the link still opens the photo in a new tab (the href fallback).
+(function(){
+  var box = document.getElementById('lightbox');
+  var img = document.getElementById('lightboxImg');
+  var cap = document.getElementById('lightboxCap');
+  if(!box || !img || !cap) return;
+  function openBox(src, title, isAi){
+    img.src = src;
+    img.alt = (isAi ? 'AI illustration for ' : 'Photo or flyer for ') + title;
+    cap.textContent = title + (isAi ? ' — AI illustration' : '');
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBox(){
+    box.hidden = true;
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[data-lightbox]') : null;
+    if(a){
+      e.preventDefault();
+      openBox(a.getAttribute('href'), a.getAttribute('data-title') || '', a.getAttribute('data-ai') === '1');
+      return;
+    }
+    if(e.target.closest && e.target.closest('[data-lightbox-close]')){ closeBox(); }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !box.hidden){ closeBox(); } });
+})();
+</script>
+</body>
+</html>
