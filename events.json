@@ -1,5 +1,5 @@
 {
-  "count": 85,
+  "count": 87,
   "events": [
     {
       "category": "Festival",
@@ -448,6 +448,22 @@
       "town": "Franklin"
     },
     {
+      "id": "fb-newsoms-craft-vendor-fair-2026",
+      "title": "Newsoms Vol. Fire Dept. Craft & Vendor Fair",
+      "short": "Handmade crafts, unique gifts, and homemade goodies at the Newsoms firehouse.",
+      "date": "2026-11-14",
+      "time": "10:00 AM - 3:00 PM",
+      "town": "Newsoms",
+      "place": "NVFD Station 9, 22146 General Thomas Hwy, Newsoms",
+      "organizer": "Newsoms Volunteer Fire Department",
+      "category": "Market",
+      "desc": "Join the Newsoms Volunteer Fire Department for a day of shopping, holiday cheer, and supporting local businesses. Handmade crafts, unique gifts, homemade goodies, and holiday favorites, with something for everyone.",
+      "details": "Handmade crafts, unique gifts, homemade goodies, and holiday favorites. Vendors include Scentsy, Tastefully Simple, Perks Creative Woodworking, Wild Story Creations, Shaub's Custom Designs, Emily's Homemade Treasures, and more.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/baefc150e4b7.jpg",
+      "sourceName": "Newsoms Volunteer Fire Department (Facebook)",
+      "sourceUrl": "https://www.facebook.com/Newsomsfire/posts/pfbid02Z1EmZhPqjgB3Z22y6oB7vh7Ee2JMkR7GQJRbFytpzDPSMGAVBdefzvNp3VwjNgf8l"
+    },
+    {
       "category": "Community",
       "contact": "Bonnie Lauver, 22511 Main Street, Courtland, VA 23837 (no phone or email shown)",
       "cost": "FREE",
@@ -752,6 +768,22 @@
       "photoAi": true,
       "sourceName": "Southampton Motor Speedway",
       "sourceUrl": "https://southamptonmotorspeedway.com/events/"
+    },
+    {
+      "id": "fb-methodist-marketplace-2026",
+      "title": "Methodist Marketplace",
+      "short": "Shop the shoppes at High Street UMC's holiday marketplace, then grab a barbecue sandwich.",
+      "date": "2026-11-21",
+      "time": "10:00 AM - 3:00 PM",
+      "town": "Courtland",
+      "place": "Fellowship Hall, 31164 Camp Pkwy, Courtland, VA 23837",
+      "organizer": "High Street United Methodist Church (United Women of Faith)",
+      "category": "Market",
+      "desc": "High Street UMC's United Women of Faith host the Methodist Marketplace. Shop accessories, purses, jewelry, housewares, vintage items, bakery goods, and the Christmas Shoppe. The United Methodist Men will be selling barbecue sandwiches, coleslaw, and chips, plus barbecue by the pound.",
+      "details": "Shoppes to include: Accessories, Purses, Jewelry, Housewares, Vintage Items, Bakery, and Christmas Shoppe. United Methodist Men selling barbecue sandwiches, coleslaw, and chips, as well as barbecue by the pound.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/e7d5fde3dafd.jpg",
+      "sourceName": "High Street United Methodist Church (Facebook)",
+      "sourceUrl": "https://www.facebook.com/High.Street.United.Methodist.23851/posts/pfbid0Dkg5ocF7gRS8Df5BDjKs9h3Mu6JFjR4d5baxtGpSdEtF9UNmxzpRhjVMS3wJYfDdl"
     },
     {
       "category": "Library",
@@ -1359,6 +1391,6 @@
       "town": "Franklin"
     }
   ],
-  "updated": "2026-11-11T02:57:09Z",
+  "updated": "2026-11-11T03:04:01Z",
   "version": 2
 }
