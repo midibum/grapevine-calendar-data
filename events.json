@@ -1,5 +1,5 @@
 {
-  "count": 91,
+  "count": 92,
   "events": [
     {
       "category": "History",
@@ -179,6 +179,19 @@
       "details": "Tickets include unlimited oysters, hush puppies, chili, hot dogs, and 2 drink tickets. Tickets $71.21 via Eventbrite: https://www.eventbrite.com/e/redds-oyster-fest-tickets-2003918542304",
       "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b772774995fb.jpg",
       "sourceName": "Redd's Filling Station (Facebook)"
+    },
+    {
+      "category": "Community",
+      "date": "2026-11-14",
+      "desc": "Car and truck meet in the Bowling Alley parking lot on the movie theater side. Come out, check out the cool cars, and meet new people. Rules: no burnouts, no loud revving, no drag racing, no donuts.",
+      "id": "fb-car-truck-meet-2026",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/7d2347491c25.jpg",
+      "place": "The Bowling Alley Parking Lot (movie theater side), 1327 Armory Dr, Franklin, VA 23851",
+      "short": "Car & Truck Meet",
+      "sourceName": "Facebook",
+      "time": "7:00 PM \u2013 9:00 PM",
+      "title": "Car & Truck Meet",
+      "town": "Franklin"
     },
     {
       "category": "Community",
