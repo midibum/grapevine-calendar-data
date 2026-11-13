@@ -1,5 +1,5 @@
 {
-  "count": 79,
+  "count": 80,
   "events": [
     {
       "category": "Workshop",
@@ -945,6 +945,22 @@
       "town": "Franklin"
     },
     {
+      "id": "fb-home-for-the-holidays-ivor-2026",
+      "title": "Home for the Holidays in Ivor",
+      "short": "Ivor hometown Christmas afternoon: Santa, food truck, parade and a cash-prize decorating contest.",
+      "date": "2026-12-06",
+      "time": "3:30 PM",
+      "town": "Ivor",
+      "place": "Ivor Municipal Building, Ivor, VA",
+      "organizer": "Town of Ivor",
+      "category": "Parade",
+      "contact": "Town Office 757-859-6397 (parade contest registration)",
+      "desc": "Home for the Holidays in Ivor, Sunday, December 6, 2026. Visit with Santa at the Ivor Municipal Building from 2:00-3:00 PM, with cookies and hot cocoa. ROGUE Food Co. food truck on site from around 11:00 AM until the parade is over. Christmas parade at 3:30 PM, lineup from 2:30 PM in The Pines. Christmas Parade Decorating Contest with cash prizes: $500 Best Full-Sized Float and $100 Best Decorated Golf Cart, sponsored by Faded Cottage and Ivor Community Events. Contest entries must register with the Town Office at 757-859-6397. The Town Christmas Tree lights up December 1 and shines all month, with memorial ornaments and the Cody Stallard Memorial tree. Toy donations for the Trooper Hill Toy Drive accepted at the town office (Mondays, Wednesdays and Thursdays 9-5) and on parade day.",
+      "details": "Parade starts at 3:30 PM. Santa 2:00-3:00 PM at the Ivor Municipal Building. Food truck from around 11:00 AM. Decorating contest: $500 Best Full-Sized Float, $100 Best Decorated Golf Cart; register at the Town Office, 757-859-6397.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/73c95306b054.jpg",
+      "sourceName": "Town of Ivor (Facebook)"
+    },
+    {
       "category": "Arts & Culture",
       "contact": "Send an Email link on the Chamber listing (no address shown)",
       "cost": "See organizer",
@@ -1272,6 +1288,6 @@
       "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-12-2027-4985"
     }
   ],
-  "updated": "2026-11-13T01:05:00Z",
+  "updated": "2026-11-13T01:14:00Z",
   "version": 2
 }
