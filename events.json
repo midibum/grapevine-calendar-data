@@ -1,54 +1,6 @@
 {
- "count": 93,
+ "count": 90,
  "events": [
-  {
-   "category": "Workshop",
-   "cost": "See organizer",
-   "date": "2026-11-12",
-   "desc": "A workshop on becoming an approved childcare educator/operator.",
-   "details": "A workshop on becoming an approved childcare educator/operator.",
-   "id": "sw-childcare-educator-operator-workshop",
-   "organizer": "U-LAUNCH: IT",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/3b8d4d154399.jpg",
-   "place": "Franklin Southampton Economic Development, Inc., 601 N Mechanic St, Franklin, VA",
-   "short": "Childcare CEO Workshop",
-   "sourceName": "Eventbrite",
-   "sourceUrl": "https://www.eventbrite.com/d/va--franklin/events/",
-   "time": "10:30 AM",
-   "title": "Become an Approved Childcare Educator Operator (CEO)",
-   "town": "Franklin"
-  },
-  {
-   "category": "Community",
-   "cost": "Event tickets $50; Reverse Raffle $100; must be 21 and over to attend",
-   "date": "2026-11-12",
-   "desc": "Davis-Ridley Oyster Roast and Reverse Raffle benefiting Southampton Academy Athletics, with oysters, fish, and beverages and live music by RT Johnson.",
-   "details": "Note: The listing's Time field reads 5:30 PM - 9:00 PM EST, but the event poster says 5:30-9:30 PM.",
-   "id": "ch-10-davis-ridley-oyster-roast",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/630a6c598bcf.jpg",
-   "place": "Franklin-Southampton County Fairgrounds",
-   "short": "Davis Ridley Oyster Roast",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/davis-ridley-oyster-roast-6255",
-   "time": "5:30 PM \u2013 9:00 PM",
-   "title": "Davis Ridley Oyster Roast",
-   "town": "Franklin"
-  },
-  {
-   "category": "Library",
-   "cost": "See organizer",
-   "date": "2026-11-12",
-   "desc": "Adult Craftsy - Diamond Art Holiday Cards. Registration required (no registration link shown on the listing).",
-   "details": "Adult Craftsy - Diamond Art Holiday Cards. Registration required (no registration link shown on the listing).",
-   "id": "ch-9-walter-cecil-rawls-library-diamond-art",
-   "organizer": "Walter Cecil Rawls Library",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0e8f7898f472.jpg",
-   "place": "22511 Main St, Courtland, VA",
-   "short": "Walter Cecil Rawls",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-diamond-art-craft-6249",
-   "time": "5:30 PM \u2013 6:30 PM",
-   "title": "Walter Cecil Rawls Library - Diamond Art Craft",
-   "town": "Courtland"
-  },
   {
    "category": "Community",
    "contact": "Chief Red Hawk 757-294-6639; Karen Running Moon Barrett 757-572-4890",
@@ -1517,6 +1469,6 @@
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-12-2027-4985"
   }
  ],
- "updated": "2026-11-13T05:17:09Z",
+ "updated": "2026-11-13",
  "version": 2
 }
