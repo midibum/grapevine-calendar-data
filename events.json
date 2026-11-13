@@ -1,5 +1,5 @@
 {
-  "count": 80,
+  "count": 81,
   "events": [
     {
       "category": "Workshop",
@@ -239,6 +239,23 @@
       "time": "9:30 AM \u2013 11:30 AM",
       "title": "Empower Her Gold Mind Program - Workshops",
       "town": "Franklin"
+    },
+    {
+      "id": "wufoo-gfwc-sedley-womans-club-90th-2026",
+      "title": "GFWC Sedley Woman's Club 90th Anniversary",
+      "short": "90th anniversary floating reception, 2 to 4 PM at Grace Memorial UMC in Sedley.",
+      "date": "2026-11-15",
+      "time": "2:00 PM \u2013 4:00 PM",
+      "town": "Sedley",
+      "place": "Grace Memorial United Methodist Church, 31036 Peachtree Avenue, Sedley, VA 23878",
+      "organizer": "GFWC Sedley Woman's Club",
+      "category": "Community",
+      "contact": "Laura Vasser, sedleywomansclub36@gmail.com, (757) 742-2916",
+      "desc": "GFWC Sedley Woman's Club 90th Anniversary, Sunday, November 15, 2026, 2:00-4:00 PM, a floating reception at Grace Memorial United Methodist Church, 31036 Peachtree Avenue, Sedley, VA 23878. Contact: Laura Vasser, sedleywomansclub36@gmail.com, (757) 742-2916.",
+      "details": "Floating reception, drop in any time between 2:00 and 4:00 PM.",
+      "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/1a06620ddc14.jpg",
+      "photoAi": true,
+      "sourceName": "GFWC Sedley Woman's Club (Wufoo submission)"
     },
     {
       "category": "Community",
@@ -1288,6 +1305,6 @@
       "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-12-2027-4985"
     }
   ],
-  "updated": "2026-11-13T01:14:00Z",
+  "updated": "2026-11-13T01:40:00Z",
   "version": 2
 }
