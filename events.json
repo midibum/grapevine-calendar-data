@@ -1,5 +1,5 @@
 {
- "count": 72,
+ "count": 78,
  "events": [
   {
    "category": "Community",
@@ -159,6 +159,24 @@
    "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/e7d5fde3dafd.jpg",
    "sourceName": "High Street United Methodist Church (Facebook)",
    "sourceUrl": "https://www.facebook.com/High.Street.United.Methodist.23851/posts/pfbid0Dkg5ocF7gRS8Df5BDjKs9h3Mu6JFjR4d5baxtGpSdEtF9UNmxzpRhjVMS3wJYfDdl"
+  },
+  {
+   "id": "fs-grayson-emmas-christmas-open-house-2026",
+   "title": "Grayson & Emma's Christmas Open House",
+   "short": "Fraser Fir trees, garland and wreaths for sale, plus hot chocolate and Christmas candy.",
+   "date": "2026-11-21",
+   "time": "10:00 AM - 7:00 PM",
+   "town": "Courtland",
+   "place": "Grayson & Emma's Garden Spot, 28412 Southampton Pkwy, Courtland, VA",
+   "category": "Market",
+   "desc": "Kick off the Christmas season at Grayson & Emma's Garden Spot. Fraser Fir trees, fresh garland and wreaths are for sale, with hot chocolate and Christmas candy while you shop.",
+   "details": "Fraser Fir trees, fresh garland and wreaths for sale. Hot chocolate and Christmas candy while you shop.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/73799dee7405.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/grayson-emmas-christmas-open-house/",
+   "organizer": "Grayson & Emma's Garden Spot",
+   "contact": "(757) 653-9652"
   },
   {
    "category": "Arts & Culture",
@@ -699,6 +717,23 @@
    "town": "Courtland"
   },
   {
+   "id": "fs-elf-on-the-shelf-courtland-2026",
+   "title": "Elf on the Shelf Comes to Courtland",
+   "short": "Elf on the Shelf visit, hot chocolate, cookies and games after the parade, for kids 17 and under.",
+   "date": "2026-12-05",
+   "time": "4:00 PM - 6:00 PM",
+   "town": "Courtland",
+   "place": "Courtland Community Center, 25499 Florence St, Courtland, VA",
+   "category": "Community",
+   "desc": "Family fun right after the Courtland Christmas Parade: a visit from the Elf on the Shelf, hot chocolate, Christmas cookies, games and activities, for kids 17 and under.",
+   "details": "A visit from the Elf on the Shelf, hot chocolate, Christmas cookies, games and activities. For kids 17 and under. Follows the Courtland Christmas Parade.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/14e31bf05fb7.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/elf-on-the-shelf-comes-to-courtland/",
+   "organizer": "Courtland Community Center"
+  },
+  {
    "id": "polar-express-nostalgic-christmas-2026",
    "title": "Polar Express Nostalgic Christmas",
    "short": "Ride the Polar Express, visit Santa and Mrs. Claus, and enjoy model trains, hot cocoa, and a live Nativity at the museum.",
@@ -763,6 +798,23 @@
    "sourceName": "The Boykins Parks & Recreation Committee (flyer)"
   },
   {
+   "id": "fs-capron-christmas-parade-2026",
+   "title": "Capron Christmas Parade & Visit with Santa",
+   "short": "Annual Christmas parade, then Santa, treats and family photos at the fire station.",
+   "date": "2026-12-06",
+   "time": "3:00 PM - 5:00 PM",
+   "town": "Capron",
+   "place": "Main Street, Capron, VA",
+   "category": "Parade",
+   "desc": "The Town of Capron's annual Christmas parade with local organizations, churches, businesses and clubs, then a visit with Santa, treats and family photos at the Capron Volunteer Fire & Rescue Station.",
+   "details": "Annual Christmas parade with local organizations, churches, businesses and clubs. Visit with Santa, treats and family photos at the Capron Volunteer Fire & Rescue Station after the parade.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/02e8f96a66fe.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/capron-christmas-parade-visit-with-santa/",
+   "organizer": "Town of Capron"
+  },
+  {
    "id": "fb-home-for-the-holidays-ivor-2026",
    "title": "Home for the Holidays in Ivor",
    "short": "Ivor hometown Christmas afternoon: Santa, food truck, parade and a cash-prize decorating contest.",
@@ -814,6 +866,23 @@
    "cost": "Free"
   },
   {
+   "id": "fs-singing-santa-newsoms-2026",
+   "title": "A Magical Evening with Singing Santa & Friends",
+   "short": "Crafts and treats, then Singing Santa and five holiday characters perform, plus a visit with Santa.",
+   "date": "2026-12-09",
+   "time": "6:00 PM - 7:30 PM",
+   "town": "Newsoms",
+   "place": "Newsoms United Methodist Church, 29193 S. Main St, Newsoms, VA",
+   "category": "Community",
+   "desc": "Holiday crafts and treats from 6:00 to 6:30, then Singing Santa and five holiday characters perform from 6:30 to 7:15, with a visit with Santa after the show.",
+   "details": "Holiday crafts and treats 6:00-6:30 PM. Singing Santa and five holiday characters perform 6:30-7:15 PM. Visit with Santa after the show.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/14e9c6810a6f.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/a-magical-evening-with-singing-santa-friends/",
+   "organizer": "Newsoms United Methodist Church"
+  },
+  {
    "category": "Community",
    "contact": "757-452-2737",
    "cost": "Free",
@@ -859,6 +928,24 @@
    "time": "9:00 AM – 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
+  },
+  {
+   "id": "fs-singing-santa-brunch-serve-2026",
+   "title": "Singing Santa Holiday Brunch at Serve",
+   "short": "Brunch buffet with a live Singing Santa performance and a chance to meet Santa. Reservations required.",
+   "date": "2026-12-13",
+   "time": "11:00 AM - 1:30 PM",
+   "town": "Franklin",
+   "place": "Serve Restaurant, 102 N Main St, Franklin, VA",
+   "category": "Community",
+   "desc": "Brunch buffet with a live Singing Santa performance and a chance to meet Santa. Doors open at 11:00, brunch is served at 11:30, and the show starts at 12:30. Reservations required.",
+   "details": "Brunch buffet, Singing Santa performance, meet Santa. Doors 11:00 AM, brunch 11:30 AM, show 12:30 PM. Reservations required.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/d26a91fb51e5.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/singing-santa-holiday-brunch-at-serve/",
+   "organizer": "Serve Restaurant",
+   "contact": "(757) 304-5270"
   },
   {
    "id": "fs-learn-art-of-blacksmithing-2026",
@@ -927,6 +1014,22 @@
    "time": "4:30 PM – 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
+  },
+  {
+   "id": "fs-franklin-holiday-happening-2026",
+   "title": "Franklin Holiday Happening",
+   "short": "A festive evening of holiday entertainment, family activities and community fellowship in downtown Franklin.",
+   "date": "2026-12-15",
+   "time": "7:00 PM - 9:00 PM",
+   "town": "Franklin",
+   "place": "Downtown Franklin, VA",
+   "category": "Festivals & Celebrations",
+   "desc": "A festive evening of holiday entertainment, family activities and community fellowship in downtown Franklin. No venue or organizer has been published yet; additional details will be announced as they become available.",
+   "details": "Holiday entertainment, family activities and community fellowship. No venue or organizer has been published yet; additional details will be announced as they become available.",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/85be2ba7145c.jpg",
+   "photoAi": true,
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/franklin-holiday-happening/"
   },
   {
    "category": "Community",
