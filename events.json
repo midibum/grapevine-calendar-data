@@ -1,5 +1,5 @@
 {
- "count": 77,
+ "count": 74,
  "events": [
   {
    "category": "Community",
@@ -16,54 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Arts & Culture",
-   "contact": "rawlsarts@gmail.com, 757-653-0754",
-   "cost": "$20 (All Supplies Included)",
-   "date": "2026-11-19",
-   "desc": "Festive card-making class with Kay Thomas and Dell Aycock; make two Christmas cards featuring playful pop-ups, unique folds, sparkling embellishments, and cheerful coloring.",
-   "details": "Registration: https://forms.gle/hwU48moCxRUJ66zK8",
-   "id": "ch-19-holiday-card-making",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/1748f3a63355.jpg",
-   "place": "Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837",
-   "short": "Holiday Card Making",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/holiday-card-making-6234",
-   "time": "10:00 AM – 12:00 PM",
-   "title": "Holiday Card Making",
-   "town": "Courtland"
-  },
-  {
-   "category": "Library",
-   "cost": "See organizer",
-   "date": "2026-11-19",
-   "desc": "As The Page Turns in SOCO book club at the Walter Cecil Rawls Library.",
-   "details": "As The Page Turns in SOCO book club at the Walter Cecil Rawls Library.",
-   "id": "ch-20-walter-cecil-rawls-library-book-club",
-   "organizer": "Walter Cecil Rawls Library",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2ad9e52f4522.jpg",
-   "place": "22511 Main St, Courtland, VA",
-   "short": "Walter Cecil Rawls",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-library-book-club-6252",
-   "time": "2:00 PM – 3:00 PM",
-   "title": "Walter Cecil Rawls Library - Book Club",
-   "town": "Courtland"
-  },
-  {
-   "category": "Community",
-   "contact": "Madison Berryman, 757-562-4900",
-   "cost": "See organizer",
-   "date": "2026-11-19",
-   "desc": "The 31st annual Community Expo, celebrating the strength of local businesses and the future of Franklin and Southampton County, with patriotic spirit, community pride, and chances to connect with local businesses and organizations.",
-   "details": "Website: http://www.fsachamber.com",
-   "id": "ch-21-chamber-community-expo",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/51b32a4d20d7.jpg",
-   "place": "Workforce Development Center, 100 N. College Drive, Franklin, VA",
-   "short": "Chamber Community Expo",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/chamber-community-expo-6144",
-   "time": "4:00 PM – 7:00 PM",
-   "title": "Chamber Community Expo",
-   "town": "Franklin"
   },
   {
    "category": "Community",
@@ -1265,6 +1217,6 @@
    "town": "Franklin"
   }
  ],
- "updated": "2026-11-19",
+ "updated": "2026-11-20T08:22:02Z",
  "version": 2
 }
