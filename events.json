@@ -1,5 +1,5 @@
 {
- "count": 76,
+ "count": 74,
  "events": [
   {
    "category": "Community",
@@ -16,36 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Community",
-   "contact": "Kristen Chaney, 757-859-6161",
-   "cost": "FREE",
-   "date": "2026-11-20",
-   "desc": "Food drive at Ivor Medical Center; drop off donations there, and food distribution runs from 10 AM until food is gone, first come, first served. Donations of new hygiene products are also being taken.",
-   "details": "Note: No Time field on the listing; Date/Time Information reads 11/20/2026 from 10:00 AM until food is gone. Entered as an all-day event.",
-   "id": "ch-22-thanksgiving-food-drive",
-   "place": "Ivor Medical Center, 8575 Ivor Road, Ivor, VA 23866",
-   "short": "Thanksgiving Food Drive",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/thanksgiving-food-drive-6244",
-   "time": "10:00 AM",
-   "title": "Thanksgiving Food Drive",
-   "town": "Ivor"
-  },
-  {
-   "category": "Community",
-   "date": "2026-11-20",
-   "desc": "Santa Paws is coming to town! Bring your pet for pictures with Santa, hosted by Southampton Boarding and Grooming. Photo packages will be available for purchase.",
-   "details": "Photos by April Renee' Photography. Photo packages available for purchase.",
-   "id": "fb-pictures-with-santa-paws-2026",
-   "organizer": "Southampton Boarding and Grooming",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/4c1f1ded7ae9.jpg",
-   "place": "Southampton Boarding and Grooming, 26292 Delaware Rd, Franklin, VA 23851",
-   "short": "Bring your pet for a photo with Santa, hosted by Southampton Boarding and Grooming.",
-   "sourceName": "Southampton Veterinary Clinic PC (Facebook)",
-   "time": "5:00 PM - 7:30 PM",
-   "title": "Pictures with Santa Paws",
-   "town": "Franklin"
   },
   {
    "category": "Market",
@@ -93,7 +63,7 @@
    "place": "Rawls Museum Arts, 22376 Linden Street, Courtland, VA 23837",
    "short": "Paper Painting Class",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/paper-painting-class-6235",
-   "time": "10:00 AM – 1:00 PM",
+   "time": "10:00 AM \u2013 1:00 PM",
    "title": "Paper Painting Class",
    "town": "Courtland"
   },
@@ -111,7 +81,7 @@
    "short": "Jeep Jingle Toy Drive",
    "sourceName": "Facebook",
    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid023j7iQtYwekwFj2t2diCuY7Ws84ZYTdMKXbof7vWCtdZ9FmFTGWoxwGp1vnfwPc1il&id=100088219271296",
-   "time": "10:00 AM – 3:00 PM",
+   "time": "10:00 AM \u2013 3:00 PM",
    "title": "4th Annual Jeep Jingle FOP Trooper Hill Toy Drive Show and Shine",
    "town": "Franklin"
   },
@@ -127,7 +97,7 @@
    "short": "Ted Talks Youth Program",
    "sourceName": "City of Franklin Parks & Recreation (Facebook)",
    "sourceUrl": "https://www.facebook.com/tracy.grant.33/posts/pfbid026RdM2NH1CBJeTbmeUUPR6wPY5PDkAwSvY5XppqNyHGfhP4WCF7qPK26zH7oAWJJBl",
-   "time": "11:00 AM – 1:00 PM",
+   "time": "11:00 AM \u2013 1:00 PM",
    "title": "Ted Talks Youth Male Program",
    "town": "Franklin"
   },
@@ -146,7 +116,7 @@
    "short": "Free Christmas Pictures",
    "sourceName": "Your Event, Your Way Catering & More LLC (Facebook)",
    "sourceUrl": "https://www.facebook.com/groups/everythingsuffolkva/permalink/1661773295344929/",
-   "time": "12:00 PM – 5:00 PM",
+   "time": "12:00 PM \u2013 5:00 PM",
    "title": "Free Christmas Family Pictures",
    "town": "Franklin"
   },
@@ -212,7 +182,7 @@
    "place": "210 S. Main St, Franklin",
    "short": "Franklin's Market on Main",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/franklin-s-market-on-main-11-21-2026-5177",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Franklin's Market on Main",
    "town": "Franklin"
   },
@@ -228,7 +198,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-21-2026-4777",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -244,7 +214,7 @@
    "place": "Holland Baptist Church, 6519 Holland Rd, Suffolk, VA 23437",
    "short": "Christmas bazaar with crafts, specialty vendors, a youth bake sale and homemade lunch items.",
    "sourceName": "Holland Baptist Church",
-   "time": "9:00 AM – 2:00 PM",
+   "time": "9:00 AM \u2013 2:00 PM",
    "title": "Annual Christmas Bazaar at Holland Baptist Church",
    "town": "Holland"
   },
@@ -328,7 +298,7 @@
    "place": "22511 Main St, Courtland, VA",
    "short": "Walter Cecil Rawls -",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-thanksgiving-story-time-6253",
-   "time": "10:00 AM – 11:00 AM",
+   "time": "10:00 AM \u2013 11:00 AM",
    "title": "Walter Cecil Rawls - Thanksgiving Story Time",
    "town": "Courtland"
   },
@@ -345,7 +315,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-24-2026-4978",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -362,7 +332,7 @@
    "short": "One-day market to stock up for Thanksgiving: fresh seafood, farm eggs, local honey, sweet potatoes, baked goods, jams, jellies, decorated cookies and locally grown produce.",
    "sourceName": "Franklin Southampton Economic Development",
    "sourceUrl": "https://visitfranklinsouthamptonva.com/event/goose-hill-farm-thanksgiving-market/",
-   "time": "12:00 PM – 2:00 PM",
+   "time": "12:00 PM \u2013 2:00 PM",
    "title": "Goose Hill Farm Thanksgiving Market",
    "town": "Franklin"
   },
@@ -394,7 +364,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-25-2026-5814",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -490,7 +460,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-28-2026-4778",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -518,7 +488,7 @@
    "place": "VFW Post 4411, 3385 Beaverdam Rd, Franklin, VA",
    "short": "Homeschool Paint event",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/homeschool-paint-event-6240",
-   "time": "10:00 AM – 12:00 PM",
+   "time": "10:00 AM \u2013 12:00 PM",
    "title": "Homeschool Paint event",
    "town": "Franklin"
   },
@@ -535,7 +505,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-01-2026-4979",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -568,7 +538,7 @@
    "place": "VFW Post 4411, 3385 Beaverdam Rd, Franklin, VA",
    "short": "Ornament Paint Night",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/ornament-paint-night-6241",
-   "time": "7:00 PM – 9:00 PM",
+   "time": "7:00 PM \u2013 9:00 PM",
    "title": "Ornament Paint Night",
    "town": "Franklin"
   },
@@ -584,7 +554,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-02-2026-5815",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -631,7 +601,7 @@
    "place": "Downtown Franklin",
    "short": "City of Franklin",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/city-of-franklin-christmas-parade-6058",
-   "time": "7:00 PM – 8:00 PM",
+   "time": "7:00 PM \u2013 8:00 PM",
    "title": "City of Franklin Christmas Parade",
    "town": "Franklin"
   },
@@ -680,7 +650,7 @@
    "place": "Main St, Courtland, VA",
    "short": "Courtland Christmas",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/courtland-christmas-parade-12-05-2026-6259",
-   "time": "2:00 PM – 3:00 PM",
+   "time": "2:00 PM \u2013 3:00 PM",
    "title": "Courtland Christmas Parade",
    "town": "Courtland"
   },
@@ -746,7 +716,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-05-2026-4779",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -811,7 +781,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-08-2026-4980",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -862,7 +832,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-09-2026-5816",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -893,7 +863,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-12-2026-4780",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -962,7 +932,7 @@
    "short": "Gingerbread Reception",
    "sourceName": "Franklin-Southampton Area Chamber of Commerce Events Calendar",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/united-way-gingerbread-house-challenge-6257",
-   "time": "5:00–7:00 PM",
+   "time": "5:00\u20137:00 PM",
    "title": "Annual Gingerbread Reception",
    "town": "Franklin"
   },
@@ -979,7 +949,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-15-2026-4981",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -1011,7 +981,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-16-2026-5817",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -1061,7 +1031,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-19-2026-4781",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -1078,7 +1048,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-22-2026-4982",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -1094,7 +1064,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-23-2026-5818",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -1110,7 +1080,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-12-26-2026-4782",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -1127,7 +1097,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-29-2026-4983",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -1143,7 +1113,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-30-2026-5819",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -1159,7 +1129,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-01-02-2027-4783",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -1176,7 +1146,7 @@
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-05-2027-4984",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -1192,7 +1162,7 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-01-06-2027-5820",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   },
@@ -1208,7 +1178,7 @@
    "place": "22173 Sedley Road, Franklin",
    "short": "Goose Hill Farm Farmers",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-01-09-2027-4784",
-   "time": "9:00 AM – 12:00 PM",
+   "time": "9:00 AM \u2013 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
@@ -1226,7 +1196,7 @@
    "short": "River Road Farm Tuesday",
    "sourceName": "Franklin-Southampton Area Chamber of Commerce Events Calendar",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-12-2027-4985",
-   "time": "4:30 PM – 6:00 PM",
+   "time": "4:30 PM \u2013 6:00 PM",
    "title": "River Road Farm Tuesday Markets",
    "town": "Franklin"
   },
@@ -1244,11 +1214,11 @@
    "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
    "short": "ODU Community Care - Free",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-01-13-2027-5821",
-   "time": "9:00 AM – 3:30 PM",
+   "time": "9:00 AM \u2013 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
    "town": "Franklin"
   }
  ],
- "updated": "2026-11-21T02:21:31Z",
+ "updated": "2026-11-21",
  "version": 2
 }
