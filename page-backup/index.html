@@ -97,20 +97,21 @@
      followed by the phone number and website (the logo carries neither). The print
      services live here as ad copy now, not as a list, so the strip never reads like
      site navigation. */
-  .promo-strip{display:flex;align-items:center;gap:14px 24px;background:#F7E8C8;border:1px solid #E3D5A8;border-radius:10px;padding:14px 18px;margin-top:26px;font-size:18px;color:#17201C;line-height:1.45}
-  .promo-strip .promo-graphic{flex:0 0 auto;line-height:0;display:flex;flex-direction:column;align-items:center;margin-top:-34px}
+  .promo-strip{display:flex;align-items:center;gap:14px 24px;background:#F7E8C8;border:1px solid #E3D5A8;border-radius:10px;padding:14px 18px;margin-top:14px;font-size:18px;color:#17201C;line-height:1.45}
+  .promo-strip .promo-graphic{flex:0 0 auto;line-height:0;display:flex;flex-direction:column;align-items:center}
   .promo-strip .promo-graphic img{height:120px;width:auto}
   .promo-strip .promo-contact{display:block;margin-top:2px;font-size:11px;line-height:1.5;color:#5B6660;text-align:center}
+  .promo-strip .mbr{display:none}
   .promo-strip .promo-contact a{color:#17201C;font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .promo-strip .promo-product{flex:0 0 auto;line-height:0}
 .promo-strip .promo-product img{height:96px;width:auto}
   .promo-strip .promo-copy{flex:1 1 260px;min-width:0}
   .promo-strip .promo-copy p{margin:0;font-weight:700}
         @media (max-width:560px){
-    .promo-strip{flex-wrap:wrap;padding:10px 12px;margin-top:24px;flex-direction:column;align-items:center;text-align:center}
+    .promo-strip{flex-wrap:wrap;padding:10px 12px;margin-top:14px;flex-direction:column;align-items:center;text-align:center}
     .promo-strip .promo-graphic img{height:64px}
-    .promo-strip .promo-graphic{margin-top:-30px}
-    .promo-strip .promo-contact{font-size:11px;white-space:nowrap}
+    .promo-strip .promo-contact{font-size:11px;line-height:1.4}
+    .promo-strip .mbr{display:block}
     .promo-strip .promo-product img{height:80px}
     .promo-strip .promo-product{order:2}
     .promo-strip .promo-copy{flex:0 0 auto;width:100%;order:3}
@@ -424,7 +425,7 @@ document.getElementById('wufoo-details').addEventListener('toggle', function() {
 <footer>
   <div class="wrap">
     <div class="footer-brand"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/101eeebb36a6.jpg" alt="Franklin Southampton Grapevine" loading="lazy"></div>
-    <img class="footer-sponsor" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy">
+    <img class="footer-sponsor" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/84fa4597fae9.png" alt="Whittington Station Printing and Graphics" loading="lazy">
     <p>32128 S. Main Street, Boykins, Virginia 23827 &nbsp;•&nbsp; Office <a href="tel:+17572146923">(757) 214-6923</a> &nbsp;•&nbsp; Fax 888-509-1478 &nbsp;•&nbsp; By appointment only</p>
     <p>Community Events Calendar for Southampton County, Franklin, and nearby communities. Know of an event that should be here? <a href="#submit">Submit it above</a> or call the shop.</p>
     <p style="font-size:13px;opacity:.85">Event details are provided by organizers and local listings. Please confirm date and time with the organizer before attending.</p>
@@ -689,7 +690,7 @@ function filtered(){
     return true;
   }).sort(function(a,b){ return parseDate(a.date)-parseDate(b.date); });
 }
-var CONTACT_LINES = 'Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>';
+var CONTACT_LINES = 'Call <a href="tel:+17572146923">(757) 214-6923</a><br class="mbr"> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>';
 var PROMOS = [
   { para:"Need TICKETS for your next event?", img:"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/cf5a9686fc29.png", alt:"Event tickets" },
   { para:"Need FLYERS that get noticed?", img:"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/a0dfd00794c0.png", alt:"Flyers" },
@@ -705,7 +706,7 @@ var PROMOS = [
 function promoStrip(i){
   var p = PROMOS[i % PROMOS.length];
   return '<aside class="promo-strip" aria-label="From the print shop">'
-    + '<span class="promo-graphic"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy" /><span class="promo-contact">' + CONTACT_LINES + '</span></span>'
+    + '<span class="promo-graphic"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/84fa4597fae9.png" alt="Whittington Station Printing and Graphics" loading="lazy" /><span class="promo-contact">' + CONTACT_LINES + '</span></span>'
     + '<div class="promo-copy"><p>' + p.para + '</p></div>'
     + (p.img ? '<span class="promo-product"><img src="'+esc(p.img)+'" alt="'+esc(p.alt || 'Printed product')+'" loading="lazy" /></span>' : '')
     + '</aside>';
