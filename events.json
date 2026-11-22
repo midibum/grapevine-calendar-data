@@ -1,5 +1,5 @@
 {
- "count": 73,
+ "count": 74,
  "events": [
   {
    "category": "Community",
@@ -273,6 +273,24 @@
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/united-way-gingerbread-house-challenge-6257",
    "time": "All day",
    "title": "United Way Gingerbread House Challenge"
+  },
+  {
+   "category": "Market",
+   "cost": "Free",
+   "date": "2026-11-27",
+   "desc": "Feridies' Shop Local holiday sale — 25% off all holiday items, all weekend: holiday peanuts and nut confections, holiday candy and gourmet goodies, Christmas tree ornaments, holiday decorations, and holiday linens and tabletop.",
+   "details": "25% off all holiday items, Friday through Sunday, during the shop's regular hours. Holiday peanuts and nut confections in holiday labels, holiday candy and gourmet, holiday linens and tabletop, holiday decor, and all Christmas tree ornaments. Family-owned since 1973. Phone (757) 653-2028.",
+   "endDate": "2026-11-29",
+   "id": "sw-feridies-holiday-sale-2026",
+   "organizer": "Feridies Peanuts & Provisions",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/164e0511b6672131a7d89a16642e9111.jpg",
+   "place": "Feridies Peanuts & Provisions, 27478 Southampton Pkwy, Courtland, VA",
+   "short": "Feridies Holiday Sale",
+   "sourceName": "Feridies Peanuts & Provisions",
+   "sourceUrl": "https://www.facebook.com/ThePeanutPatchGiftShop/posts/pfbid031JvHdfpLru8oVu8TwmKpuonn8dZ7vutkgomP5YgCxs7RRL4VJENmohvxeg2DHBGl",
+   "time": "During store hours",
+   "title": "Feridies Holiday Sale — 25% Off All Holiday Items",
+   "town": "Courtland"
   },
   {
    "category": "Community",
