@@ -259,6 +259,10 @@
   .cta-band h3{font-family:"Newsreader",Georgia,serif;font-size:26px;margin:0;line-height:1.1}
   .cta-band p{margin:4px 0 0;opacity:.92}
   .cta-band .btn{background:#fff;color:#7A1F14;border:0}
+  .cta-band > div:first-child{flex:1 1 420px;min-width:0}
+  .cta-band .cta-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;flex:0 0 auto}
+  .cta-band .cta-actions a{display:block;line-height:0}
+  .cta-band .cta-logo{height:48px;width:auto;display:block}
   footer{margin-top:36px;background:var(--green);color:#fff;padding:28px 0 34px;border-top:6px solid var(--gold)}
   footer .fname{font-family:"Newsreader",Georgia,serif;font-weight:900;font-size:30px;line-height:1}
   footer p{margin:6px 0;color:rgba(255,255,255,.9);font-size:14.5px}
@@ -414,8 +418,11 @@ document.getElementById('wufoo-details').addEventListener('toggle', function() {
           <p style="margin:0;color:var(--muted);font-size:15px">Private parties and events that are not open to the public will not be listed.</p>
         </div>
         <div class="cta-band" style="margin-top:14px">
-          <div><h3>Need flyers for this event?</h3><p>Flyers, posters, tickets, yard signs, banners, and handouts for this exact event, printed right here in Boykins.</p></div>
-          <a class="btn" href="tel:+17572146923">Call (757) 214-6923</a>
+          <div><h3>Need promotional materials<br>for this event?</h3><p>Flyers, posters, tickets, yard signs, banners, and handouts for YOUR event, printed right here in Southampton County.</p></div>
+          <div class="cta-actions">
+            <a class="btn" href="tel:+17572146923">Call (757) 214-6923</a>
+            <a href="https://whittingtonstation.com" aria-label="Whittington Station Printing and Graphics"><img class="cta-logo" src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/ea734726c557.png" alt="Whittington Station Printing and Graphics" loading="lazy" /></a>
+          </div>
         </div>
       </div>
     </div>
