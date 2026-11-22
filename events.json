@@ -1,5 +1,5 @@
 {
- "count": 62,
+ "count": 64,
  "events": [
   {
    "category": "Community",
@@ -86,6 +86,23 @@
    "time": "2:00 PM - 4:00 PM",
    "title": "College Drive Crank and Cruise",
    "town": "Franklin"
+  },
+  {
+   "category": "Community",
+   "contact": "(434) 632-3943, soobp2020@gmail.com",
+   "cost": "FREE",
+   "date": "2026-11-22",
+   "desc": "Free community Thanksgiving meal: good food, fellowship, and gratitude. All are welcome!",
+   "details": "Free community meal presented by Surviving Off Of Broken Pieces, Inc. in partnership with Boykins Volunteer Fire & Rescue. Contact (434) 632-3943 or soobp2020@gmail.com.",
+   "id": "sw-community-thanksgiving-feast-2026",
+   "organizer": "Surviving Off Of Broken Pieces, Inc. and Boykins Volunteer Fire & Rescue",
+   "place": "Boykins Volunteer Fire & Rescue, 18139 N. Railroad Ave., Boykins, VA 23827",
+   "short": "Thanksgiving Feast",
+   "sourceName": "Surviving Off Of Broken Pieces, Inc. (Facebook)",
+   "sourceUrl": "https://www.facebook.com/regina.crockett.7/posts/pfbid02T9pVLf8aARbWb6fd43xFfRct4uP9d5268nh8mUeJUwAQ9mMmMHoXsrqxB1AMHnHQl",
+   "time": "3:00 PM – 6:00 PM",
+   "title": "Community Thanksgiving Feast",
+   "town": "Boykins"
   },
   {
    "category": "Library",
@@ -803,6 +820,23 @@
    "time": "6:00 PM - 8:00 PM",
    "title": "Wine & Watercolor with Kenny King",
    "town": "Courtland"
+  },
+  {
+   "category": "Community",
+   "contact": "(434) 632-3943, soobp2020@gmail.com",
+   "cost": "FREE",
+   "date": "2026-12-19",
+   "desc": "Community Christmas dinner: food, fellowship, laughter, and love. Everyone deserves to feel loved, valued, and remembered at Christmas. All are welcome!",
+   "details": "Community Christmas dinner organized by Surviving Off Of Broken Pieces, Inc. (THE HUB). Donations of food, gifts, supplies, or monetary support appreciated. Contact (434) 632-3943 or soobp2020@gmail.com.",
+   "id": "sw-hub-community-christmas-dinner-2026",
+   "organizer": "Surviving Off Of Broken Pieces, Inc. (THE HUB)",
+   "place": "1403 South Street, Franklin, VA 23851",
+   "short": "Community Christmas Dinner",
+   "sourceName": "Surviving Off Of Broken Pieces, Inc. (Facebook)",
+   "sourceUrl": "https://www.facebook.com/regina.crockett.7/posts/pfbid02p9NyHwdbB8QDNK5x6nRzn5WWzi3rDahKTwFsDBJbSwcjEZZQ5MPhLHPMsiCczCFMl",
+   "time": "1:00 PM – 3:00 PM",
+   "title": "THE HUB Community Christmas Dinner",
+   "town": "Franklin"
   },
   {
    "category": "Community",
