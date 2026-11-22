@@ -97,17 +97,20 @@
      followed by the phone number and website (the logo carries neither). The print
      services live here as ad copy now, not as a list, so the strip never reads like
      site navigation. */
-  .promo-strip{display:flex;align-items:center;gap:10px 18px;background:#F7E8C8;border:1px solid #E3D5A8;border-radius:10px;padding:10px 14px;font-size:13.5px;color:#5B6660;line-height:1.45}
-  .promo-strip .promo-graphic{flex:0 0 auto;line-height:0}
-  .promo-strip .promo-graphic img{height:80px;width:auto}
+  .promo-strip{display:flex;align-items:center;gap:12px 22px;background:#F7E8C8;border:1px solid #E3D5A8;border-radius:10px;padding:14px 18px;margin-top:26px;font-size:16px;color:#17201C;line-height:1.45}
+  .promo-strip .promo-graphic{flex:0 0 auto;line-height:0;display:flex;flex-direction:column;align-items:center;margin-top:-34px}
+  .promo-strip .promo-graphic img{height:120px;width:auto}
+  .promo-strip .promo-contact{display:block;margin-top:2px;font-size:12px;line-height:1.5;color:#5B6660;text-align:center}
+  .promo-strip .promo-contact a{color:#17201C;font-weight:700;text-decoration:underline;text-underline-offset:2px}
 .promo-strip .promo-product{flex:0 0 auto;line-height:0}
-.promo-strip .promo-product img{height:80px;width:auto}
+.promo-strip .promo-product img{height:96px;width:auto}
   .promo-strip .promo-copy{flex:1 1 260px;min-width:0}
   .promo-strip .promo-copy p{margin:0}
-  .promo-strip .promo-copy a{color:#17201C;font-weight:700;text-decoration:underline;text-underline-offset:2px}
         @media (max-width:560px){
-    .promo-strip{flex-wrap:wrap;padding:10px 12px}
+    .promo-strip{flex-wrap:wrap;padding:10px 12px;margin-top:24px}
     .promo-strip .promo-graphic img{height:64px}
+    .promo-strip .promo-graphic{margin-top:-30px}
+    .promo-strip .promo-contact{font-size:11px}
     .promo-strip .promo-product img{height:64px}
     .promo-strip .promo-product{order:2}
     .promo-strip .promo-copy{flex-basis:100%;order:3}
@@ -686,7 +689,7 @@ function filtered(){
     return true;
   }).sort(function(a,b){ return parseDate(a.date)-parseDate(b.date); });
 }
-var CONTACT = 'Call <a href="tel:+17572146923">(757) 214-6923</a> or visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>.';
+var CONTACT_LINES = 'Call <a href="tel:+17572146923">(757) 214-6923</a><br>Visit <a href="https://whittingtonstation.com">WhittingtonStation.com</a>';
 var PROMOS = [
   { para:"Need TICKETS for your next event?", img:"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/fa074b0972bb.png", alt:"Event tickets" },
   { para:"Need FLYERS that get noticed?", img:"https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/a0dfd00794c0.png", alt:"Flyers" },
@@ -702,8 +705,8 @@ var PROMOS = [
 function promoStrip(i){
   var p = PROMOS[i % PROMOS.length];
   return '<aside class="promo-strip" aria-label="From the print shop">'
-    + '<span class="promo-graphic"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy" /></span>'
-    + '<div class="promo-copy"><p>' + p.para + ' ' + CONTACT + '</p></div>'
+    + '<span class="promo-graphic"><img src="https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/5a6060726449.png" alt="Whittington Station Printing and Graphics" loading="lazy" /><span class="promo-contact">' + CONTACT_LINES + '</span></span>'
+    + '<div class="promo-copy"><p>' + p.para + '</p></div>'
     + (p.img ? '<span class="promo-product"><img src="'+esc(p.img)+'" alt="'+esc(p.alt || 'Printed product')+'" loading="lazy" /></span>' : '')
     + '</aside>';
 }
