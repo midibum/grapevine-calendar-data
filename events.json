@@ -1,5 +1,5 @@
 {
- "count": 69,
+ "count": 73,
  "events": [
   {
    "category": "Community",
@@ -483,6 +483,26 @@
    "town": "Sedley"
   },
   {
+   "category": "Market",
+   "cost": "Free",
+   "date": "2026-12-05",
+   "desc": "A holiday market with 50-plus vendors at Windsor Castle Park, part of the Christmas in Smithfield weekend.",
+   "details": "More than 50 vendors with handmade goods, small-batch foods, decorations, crafts, gifts, and fresh arrangements, plus a food court and coffee or cocoa. Free admission. Part of the Christmas in Smithfield weekend.",
+   "drive": "Windsor Castle Park, Smithfield · about 40 minutes from Franklin",
+   "id": "sw-market-at-the-manor-smithfield-2026",
+   "organizer": "Smithfield Farmers Market",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/63a3002b769634c544f52dd4d328bf34.jpg",
+   "photoAi": true,
+   "place": "Manor House at Windsor Castle Park, 301 Jericho Rd, Smithfield, VA",
+   "short": "Market at the Manor",
+   "sourceName": "Christmas in Smithfield",
+   "sourceUrl": "https://christmasinsmithfield.online/historic-tour",
+   "time": "10:00 AM – 2:00 PM",
+   "title": "Market at the Manor",
+   "town": "Smithfield",
+   "worthTheDrive": true
+  },
+  {
    "category": "Parade",
    "contact": "CVRS, cvrs@courtlandchristmasparade@gmail.com",
    "cost": "See organizer",
@@ -563,6 +583,27 @@
    "time": "9:00 AM – 12:00 PM",
    "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
+  },
+  {
+   "category": "Festivals & Celebrations",
+   "cost": "$40, includes Antique Show",
+   "date": "2026-12-05",
+   "desc": "Tour six decorated historic homes and sites in downtown Smithfield, plus an antiques show, over the Christmas in Smithfield weekend.",
+   "details": "Six historic sites: King-Atkinson House, J.W. Holloway House, Watson P. Jordan House, the 1750 Isle of Wight County Courthouse, Windsor Castle Manor House, and the Schoolhouse Museum. Admission $40, includes the Antiques Show. Windsor Castle Manor House tour only, $10. Tickets at Smithfield Center (220 N. Church St) and Windsor Castle Manor House (705 Cedar St), or online. Doorway Singers at the courthouse Sat 2-4 PM and Sun 1-3 PM; 1750 Courthouse Market both days. Some locations are not handicap accessible.",
+   "drive": "Smithfield · about 40 minutes from Franklin",
+   "endDate": "2026-12-06",
+   "id": "sw-christmas-in-smithfield-historic-sites-tour-2026",
+   "organizer": "Christmas in Smithfield",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/da8ffc18e070978a0cb8978d1459a35a.jpg",
+   "photoAi": true,
+   "place": "Smithfield Center, 220 N. Church St, Smithfield, VA",
+   "short": "Historic Sites Tour",
+   "sourceName": "Christmas in Smithfield",
+   "sourceUrl": "https://christmasinsmithfield.online/historic-tour",
+   "time": "Sat 10:00 AM – 5:00 PM, Sun 12:00 – 5:00 PM",
+   "title": "Christmas in Smithfield Historic Sites Tour and Antique Show",
+   "town": "Smithfield",
+   "worthTheDrive": true
   },
   {
    "category": "Festivals & Celebrations",
@@ -720,6 +761,46 @@
    "time": "5:00 – 8:00 PM",
    "title": "40th Annual Candlelight Christmas Tour & Market",
    "town": "Murfreesboro, NC",
+   "worthTheDrive": true
+  },
+  {
+   "category": "Festivals & Celebrations",
+   "cost": "Free",
+   "date": "2026-12-11",
+   "desc": "A free living nativity with live actors and animals — walk through Bethlehem and relive the first Christmas.",
+   "details": "Free annual living nativity with 80-plus actors and live animals (camel, goats, sheep, donkey, alpacas). Walk through Bethlehem village; tours every few minutes, 5:30-8:30 PM, Friday through Sunday. Contact (757) 357-5718.",
+   "drive": "Smithfield · about 40 minutes from Franklin",
+   "endDate": "2026-12-13",
+   "id": "sw-journey-of-christmas-smithfield-2026",
+   "organizer": "Calvary Baptist Church Smithfield",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0cf97293926fb4b4d7dc72b6f9f0f48b.jpg",
+   "place": "Calvary Baptist Church, 15155 Turner Dr, Smithfield, VA",
+   "short": "Journey of Christmas",
+   "sourceName": "Calvary Baptist Church Smithfield",
+   "sourceUrl": "https://www.CalvaryBaptistSmithfield.com/Journey-of-Christmas/",
+   "time": "5:30 – 8:30 PM",
+   "title": "Journey of Christmas",
+   "town": "Smithfield",
+   "worthTheDrive": true
+  },
+  {
+   "category": "Parade",
+   "cost": "Free",
+   "date": "2026-12-12",
+   "desc": "Smithfield's old-fashioned Christmas parade down Main Street, with floats, dancers, marching units, bands, and Santa.",
+   "details": "Annual parade on the second Saturday in December, through downtown historic Smithfield. Floats, dancers, marching units, police and fire departments, bands, and Santa. Free. Applications at genuinesmithfieldva.com or (757) 357-5182.",
+   "drive": "Downtown Smithfield · about 40 minutes from Franklin",
+   "id": "sw-downtown-smithfield-christmas-parade-2026",
+   "organizer": "Smithfield & Isle of Wight Tourism",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/acd36568b5f7a01c268f9c1863d5a585.jpg",
+   "photoAi": true,
+   "place": "Downtown Smithfield, 319 Main St, Smithfield, VA",
+   "short": "Smithfield Parade",
+   "sourceName": "Virginia.org",
+   "sourceUrl": "https://www.virginia.org/event/downtown-smithfield-christmas-parade/432/",
+   "time": "10:30 AM – 12:00 PM",
+   "title": "Downtown Smithfield Christmas Parade",
+   "town": "Smithfield",
    "worthTheDrive": true
   },
   {
