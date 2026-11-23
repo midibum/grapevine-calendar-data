@@ -1,5 +1,5 @@
 {
- "count": 74,
+ "count": 69,
  "events": [
   {
    "category": "Community",
@@ -16,94 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Community",
-   "contact": "Call/text 757-328-3155",
-   "cost": "FREE",
-   "date": "2026-11-21",
-   "desc": "Free holiday family photos for the community, all welcome, come as you are. DM, call or text 757-328-3155, or just show up.",
-   "details": "Free holiday family photos for the community, all welcome, come as you are. DM, call or text 757-328-3155, or just show up.",
-   "endDate": "2026-11-22",
-   "id": "fb-free-christmas-family-pictures-2026",
-   "organizer": "Your Event, Your Way Catering & More LLC",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/14df0a62d3d7.jpg",
-   "place": "309 North Main Street, Franklin, VA 23851",
-   "short": "Free Christmas Pictures",
-   "sourceName": "Your Event, Your Way Catering & More LLC (Facebook)",
-   "sourceUrl": "https://www.facebook.com/groups/everythingsuffolkva/permalink/1661773295344929/",
-   "time": "12:00 PM – 5:00 PM",
-   "title": "Free Christmas Family Pictures",
-   "town": "Franklin"
-  },
-  {
-   "category": "Community",
-   "date": "2026-11-21",
-   "desc": "Catch My Drift Street Comp Round 3: two days of drift competition and open drift at Southampton Motor Speedway. Saturday: load-in 9 AM, track hot 11 AM, Street Comp 3 PM, track cold 9 PM. Sunday: load-in 10 AM, track hot 12 PM, track cold 6 PM.",
-   "details": "Drift competition and open drift on the tri-oval, presented by Catch My Drift x Tool Werkes. Driver prices: Saturday $150 plus $40 for competition, Sunday $120, all-weekend $220. Registration on the day of the event. Venue info: southamptonmotorspeedway.com, (757) 346-9241. Confirmed Nov 10 by Chris DeBord at Southampton Motor Speedway.",
-   "endDate": "2026-11-22",
-   "id": "catch-my-drift-tool-werkes-2026",
-   "organizer": "Catch My Drift",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/43c059b1b134.jpg",
-   "place": "Southampton Motor Speedway, 16388 Southampton Pkwy, Capron, VA 23829",
-   "short": "Catch My Drift",
-   "sourceName": "Southampton Motor Speedway",
-   "sourceUrl": "https://southamptonmotorspeedway.com/events/",
-   "time": "All day",
-   "title": "Catch My Drift X Tool Werkes Street Car Event",
-   "town": "Capron"
-  },
-  {
-   "category": "Community",
-   "date": "2026-11-22",
-   "desc": "Boykins United Methodist Church and Boykins Baptist Church come together for a community time of worship, fellowship and gratitude ahead of Thanksgiving. Starts 11:00 AM; no end time published.",
-   "details": "Community Thanksgiving service with Boykins United Methodist Church and Boykins Baptist Church. Starts 11:00 AM; no end time published.",
-   "id": "sw-community-thanksgiving-service-2026",
-   "organizer": "Boykins United Methodist Church",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/19c44262dedf.jpg",
-   "photoAi": true,
-   "place": "Boykins United Methodist Church, 32167 S Main St, Boykins, VA",
-   "short": "Boykins United Methodist and Boykins Baptist churches together for a community time of worship, fellowship and gratitude ahead of Thanksgiving.",
-   "sourceName": "AllEvents",
-   "sourceUrl": "https://allevents.in/emporia-va/thanksgiving",
-   "time": "11:00 AM",
-   "title": "Community Thanksgiving Service",
-   "town": "Boykins"
-  },
-  {
-   "category": "Community",
-   "cost": "Free",
-   "date": "2026-11-22",
-   "desc": "An afternoon cruise-in on College Drive in Franklin. Bring a classic or custom ride to show off, or just come look at the lineup. Free and open to everyone.",
-   "details": "Free cruise-in. Classic cars, custom builds, and unique rides.",
-   "id": "fs-college-drive-crank-and-cruise-2026",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/d56c214fb9a8.jpg",
-   "photoAi": true,
-   "place": "College Drive, 351 N College Drive, Franklin, VA 23851",
-   "short": "Free, family-friendly cruise-in with classic cars and custom builds.",
-   "sourceName": "Franklin Southampton Economic Development",
-   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/college-drive-crank-and-cruise/2026-11-22/",
-   "time": "2:00 PM - 4:00 PM",
-   "title": "College Drive Crank and Cruise",
-   "town": "Franklin"
-  },
-  {
-   "category": "Community",
-   "contact": "(434) 632-3943, soobp2020@gmail.com",
-   "cost": "FREE",
-   "date": "2026-11-22",
-   "desc": "Free community Thanksgiving meal: good food, fellowship, and gratitude. All are welcome!",
-   "details": "Free community meal presented by Surviving Off Of Broken Pieces, Inc. in partnership with Boykins Volunteer Fire & Rescue. Contact (434) 632-3943 or soobp2020@gmail.com.",
-   "id": "sw-community-thanksgiving-feast-2026",
-   "organizer": "Surviving Off Of Broken Pieces, Inc. and Boykins Volunteer Fire & Rescue",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/21ce5b89f52e.jpg",
-   "place": "Boykins Volunteer Fire & Rescue, 18139 N. Railroad Ave., Boykins, VA 23827",
-   "short": "Thanksgiving Feast",
-   "sourceName": "Surviving Off Of Broken Pieces, Inc. (Facebook)",
-   "sourceUrl": "https://www.facebook.com/regina.crockett.7/posts/pfbid02T9pVLf8aARbWb6fd43xFfRct4uP9d5268nh8mUeJUwAQ9mMmMHoXsrqxB1AMHnHQl",
-   "time": "3:00 PM – 6:00 PM",
-   "title": "Community Thanksgiving Feast",
-   "town": "Boykins"
   },
   {
    "category": "Library",
@@ -1270,6 +1182,6 @@
    "worthTheDrive": true
   }
  ],
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "version": 2
 }
