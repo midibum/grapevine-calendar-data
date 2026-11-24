@@ -1,5 +1,5 @@
 {
- "count": 69,
+ "count": 73,
  "events": [
   {
    "category": "Community",
@@ -42,7 +42,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-40-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-24-2026-4978",
@@ -117,6 +117,24 @@
    "sourceUrl": "https://visitfranklinsouthamptonva.com/event/thanksgiving-turkey-trot-5k/",
    "time": "9:00 AM - 11:00 AM",
    "title": "Thanksgiving Turkey Trot 5K",
+   "town": "Franklin"
+  },
+  {
+   "category": "Community",
+   "contact": "(757) 284-1773",
+   "date": "2026-11-27",
+   "desc": "Black Friday grand opening for a new local shop with vintage treasures, handmade goods, and one-of-a-kind items from local makers and small businesses.",
+   "details": "Black Friday grand opening for a new local shop with vintage treasures, handmade goods, and one-of-a-kind items from local makers and small businesses. Contact (757) 284-1773.",
+   "id": "fs-hidden-homestead-grand-opening-2026",
+   "organizer": "Hidden Homestead",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/7c2bc36bae28cbd7e5ca58324bde0860.jpg",
+   "photoAi": true,
+   "place": "Hidden Homestead, 109 E. 2nd Avenue, Franklin, VA",
+   "short": "Hidden Homestead Grand Opening",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/hidden-homesteads-grand-opening/",
+   "time": "10:00 AM – 5:00 PM",
+   "title": "Hidden Homestead's Grand Opening",
    "town": "Franklin"
   },
   {
@@ -273,7 +291,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-44-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-01-2026-4979",
@@ -449,6 +467,26 @@
    "town": "Courtland"
   },
   {
+   "category": "Parade",
+   "cost": "Free",
+   "date": "2026-12-05",
+   "desc": "Holiday Storyland from 3:00 PM at Greenville Common with storytelling, performances, crafts and games, food and art vendors, and Santa, followed by the town's All Lit Up Parade at 4:30 PM and the Lighting of the Green.",
+   "details": "Holiday Storyland from 3:00 PM at Greenville Common (Village Green): storytelling by town leaders, singing and dancing performances, holiday crafts and games, food and art vendors, Santa. The town's All Lit Up Parade starts 4:30 PM at Smithfield High School and ends at Greenville Common for the Lighting of the Green (~5:30 PM). Rain date Sun Dec 6. Presented with the Smithfield High School National Honor Society.",
+   "drive": "Smithfield · about 40 minutes from Franklin",
+   "id": "sw-smithfield-all-lit-up-parade-storyland-2026",
+   "organizer": "Town of Smithfield",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/00abc65bcf00e0fb14b6645dc2ea690d.jpg",
+   "photoAi": true,
+   "place": "Greenville Common (Village Green), Smithfield, VA",
+   "short": "All Lit Up Parade & Storyland",
+   "sourceName": "Town of Smithfield",
+   "sourceUrl": "https://myemail.constantcontact.com/Town-Manager-s-Newsletter---November.html?soid=1133134644435&aid=MXWWfpd6ctU",
+   "time": "3:00 PM",
+   "title": "Smithfield All Lit Up Christmas Parade & NHS Holiday Storyland",
+   "town": "Smithfield",
+   "worthTheDrive": true
+  },
+  {
    "category": "Community",
    "date": "2026-12-05",
    "desc": "Family fun right after the Courtland Christmas Parade: a visit from the Elf on the Shelf, hot chocolate, Christmas cookies, games and activities, for kids 17 and under.",
@@ -592,7 +630,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-48-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-08-2026-4980",
@@ -862,7 +900,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-52-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-15-2026-4981",
@@ -902,6 +940,24 @@
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-12-16-2026-5817",
    "time": "9:00 AM – 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
+   "town": "Franklin"
+  },
+  {
+   "category": "Community",
+   "cost": "Free",
+   "date": "2026-12-18",
+   "desc": "Free family holiday afternoon: meet Santa and the Snow Queen, hot cocoa and s'mores, face painting and nature crafts. Kids earn a Nice List Certificate by donating a new or gently used toy.",
+   "details": "Free family holiday afternoon: meet Santa and the Snow Queen, hot cocoa and s'mores, face painting and nature crafts. Kids earn a Nice List Certificate by donating a new or gently used toy. Hosted with Gatherings in SoCo.",
+   "id": "fs-santas-barn-gatherings-soco-2026",
+   "organizer": "Early Childhood Western Tidewater",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/203b581fc905d4cb59baf4efd6fc94ce.jpg",
+   "photoAi": true,
+   "place": "Gatherings at SoCo, 31001 Smiths Ferry Road, Franklin, VA",
+   "short": "Santa's Barn",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/santas-barn-at-gatherings-in-soco/",
+   "time": "2:00 PM – 5:00 PM",
+   "title": "Santa's Barn at Gatherings in SoCo",
    "town": "Franklin"
   },
   {
@@ -981,7 +1037,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-56-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-22-2026-4982",
@@ -1032,7 +1088,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-60-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-12-29-2026-4983",
@@ -1083,7 +1139,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-64-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-01-05-2027-4984",
@@ -1134,7 +1190,7 @@
    "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
    "id": "ch-68-river-road-farm-tuesday-markets",
    "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/537b9cc50d02.jpg",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
    "place": "River Road Farm, 1300 N. High St, Franklin",
    "short": "River Road Farm Tuesday",
    "sourceName": "Franklin-Southampton Area Chamber of Commerce Events Calendar",
@@ -1162,6 +1218,22 @@
    "town": "Franklin"
   },
   {
+   "category": "Fundraiser",
+   "cost": "See organizer",
+   "date": "2027-01-23",
+   "desc": "Dinner fundraiser for the Paul D. Camp Community College baseball program, Saturday, January 23, 2027, 6:00–9:00 PM at The Hubs Vine in Franklin.",
+   "details": "Dinner fundraiser for the Paul D. Camp Community College baseball program. Saturday, January 23, 2027, 6:00–9:00 PM at The Hubs Vine, 1459 Armory Drive, Franklin. No ticket or price details on the Chamber listing.",
+   "id": "ch-70-first-pitch-dinner-camp-baseball-2027",
+   "organizer": "Paul D. Camp Community College",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/507c7afa40f9ae411093523332a0a512.jpg",
+   "place": "The Hubs Vine, 1459 Armory Drive, Franklin, VA",
+   "short": "First Pitch Dinner",
+   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/first-pitch-dinner-for-camp-community-college-baseball-6231",
+   "time": "6:00 PM – 9:00 PM",
+   "title": "First Pitch Dinner for Camp Community College Baseball",
+   "town": "Franklin"
+  },
+  {
    "category": "Festivals & Celebrations",
    "cost": "Admission (2027 prices to be announced)",
    "date": "2027-10-07",
@@ -1182,6 +1254,6 @@
    "worthTheDrive": true
   }
  ],
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "version": 2
 }
