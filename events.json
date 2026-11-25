@@ -1,5 +1,5 @@
 {
- "count": 71,
+ "count": 72,
  "events": [
   {
    "category": "Community",
@@ -451,6 +451,26 @@
    "time": "3:00 PM",
    "title": "Smithfield All Lit Up Christmas Parade & NHS Holiday Storyland",
    "town": "Smithfield",
+   "worthTheDrive": true
+  },
+  {
+   "category": "Arts & Culture",
+   "cost": "See organizer",
+   "date": "2026-12-05",
+   "desc": "The beloved holiday ballet performed live on stage at the Birdsong Theater, Suffolk Center for Cultural Arts. A classic family Christmas outing.",
+   "details": "The beloved holiday ballet performed live on stage at the Birdsong Theater, Suffolk Center for Cultural Arts. A classic family Christmas outing. Tickets sold directly through the studio, southsideballet.com. Note: showtime to confirm — listings show 3:00–6:00 PM, and a 1 PM performance is also listed, so there may be two showtimes.",
+   "drive": "Suffolk · about 30 minutes from Franklin",
+   "id": "sw-southside-ballet-nutcracker-2026",
+   "organizer": "Southside Ballet Studio",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/10f46b0f296f0e0c6e40aede1fbbde85.png",
+   "photoAi": true,
+   "place": "Birdsong Theater, Suffolk Center for Cultural Arts, 110 Finney Ave, Suffolk, VA",
+   "short": "The beloved holiday ballet performed live on stage by Southside Ballet Studio.",
+   "sourceName": "Salty Southern Route",
+   "sourceUrl": "https://saltysouthernroute.com/events/southside-ballet-studio-presents-the-nutcracker/",
+   "time": "3:00 PM",
+   "title": "Southside Ballet Studio Presents: The Nutcracker",
+   "town": "Suffolk",
    "worthTheDrive": true
   },
   {
