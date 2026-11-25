@@ -1,5 +1,5 @@
 {
- "count": 72,
+ "count": 71,
  "events": [
   {
    "category": "Community",
@@ -203,22 +203,6 @@
    "sourceUrl": "https://www.eventbrite.com/d/va--franklin/events/",
    "time": "4:00 PM",
    "title": "MR. STEP OUTS HOMECOMING SOUTHERN SOUL FIELD PARTY",
-   "town": "Franklin"
-  },
-  {
-   "category": "Festivals & Celebrations",
-   "cost": "See organizer",
-   "date": "2026-11-28",
-   "desc": "Goose Hill Farm Farmer's Market, held every Saturday 9am-12pm.",
-   "details": "Note: The Chamber listing's Location field reads 22173 Sedley Road, Franklin, but the event poster shows 22090 Bethel Road, Franklin, VA 23851. Address not resolved.",
-   "id": "ch-42-goose-hill-farm-farmers-market",
-   "organizer": "Goose Hill Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/0058b5159bf0.jpg",
-   "place": "22173 Sedley Road, Franklin",
-   "short": "Goose Hill Farm Farmers",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/goose-hill-farm-farmers-market-11-28-2026-4778",
-   "time": "9:00 AM – 12:00 PM",
-   "title": "Goose Hill Farm Farmers Market",
    "town": "Franklin"
   },
   {
