@@ -1,5 +1,5 @@
 {
- "count": 73,
+ "count": 71,
  "events": [
   {
    "category": "Community",
@@ -16,39 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Library",
-   "cost": "See organizer",
-   "date": "2026-11-24",
-   "desc": "Thankful Little Readers Thanksgiving Story Time: a special story time with a fun read-aloud and a festive craft to take home.",
-   "details": "Note: The poster spells the date Novemeber 24, 2026.",
-   "id": "ch-24-walter-cecil-rawls-thanksgiving-story-",
-   "organizer": "Walter Cecil Rawls Library",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/86f5e1463da7.jpg",
-   "place": "22511 Main St, Courtland, VA",
-   "short": "Walter Cecil Rawls -",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/walter-cecil-rawls-thanksgiving-story-time-6253",
-   "time": "10:00 AM – 11:00 AM",
-   "title": "Walter Cecil Rawls - Thanksgiving Story Time",
-   "town": "Courtland"
-  },
-  {
-   "category": "Arts & Culture",
-   "contact": "Send an Email link on the Chamber listing (no address shown)",
-   "cost": "See organizer",
-   "date": "2026-11-24",
-   "desc": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
-   "details": "River Road Farm Tuesday Market, every Tuesday 4:30-6pm at 1300 N High St, Franklin, VA.",
-   "id": "ch-40-river-road-farm-tuesday-markets",
-   "organizer": "River Road Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/339f196599267ef336727451bc9b9f7b.jpg",
-   "place": "River Road Farm, 1300 N. High St, Franklin",
-   "short": "River Road Farm Tuesday",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/river-road-farm-tuesday-markets-11-24-2026-4978",
-   "time": "4:30 PM – 6:00 PM",
-   "title": "River Road Farm Tuesday Markets",
-   "town": "Franklin"
   },
   {
    "category": "Community",
@@ -1254,6 +1221,6 @@
    "worthTheDrive": true
   }
  ],
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "version": 2
 }
