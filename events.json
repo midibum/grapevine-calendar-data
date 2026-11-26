@@ -1,5 +1,5 @@
 {
- "count": 71,
+ "count": 72,
  "events": [
   {
    "category": "Community",
@@ -66,6 +66,24 @@
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-25-2026-5814",
    "time": "9:00 AM – 3:30 PM",
    "title": "ODU Community Care - Free Medical Care",
+   "town": "Franklin"
+  },
+  {
+   "category": "Community",
+   "cost": "Free",
+   "date": "2026-11-26",
+   "desc": "A free Thanksgiving dinner for the community and anyone experiencing homelessness, hosted by Franklin Brother's Keepers & Women of Grace, Strength & Dignity at the New Hope Annex. Bring your family. Donations accepted via Cash App $FBrotherskeepers. Special thanks to Pittman Farms.",
+   "details": "A free Thanksgiving dinner for the community and anyone experiencing homelessness. Bring your family. Donations accepted via Cash App $FBrotherskeepers. Special thanks to Pittman Farms.",
+   "id": "sw-brothers-keepers-thanksgiving-dinner-2026",
+   "organizer": "Franklin Brother's Keepers & Women of Grace, Strength & Dignity",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2fe3dbdc8f74d4d6f115d7ae886dfe55.jpg",
+   "photoAi": true,
+   "place": "New Hope Annex, 1316 South Street, Franklin, VA 23851",
+   "short": "A free Thanksgiving dinner for the community, everyone welcome.",
+   "sourceName": "Franklin Brothers Keepers",
+   "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid07R5PL5HRfYBNkKoB16N6bapoaZ27tAzkCahzAr541dEiyLJt8XT6UdwHkp9r4NLrl&id=100077420663040",
+   "time": "10:00 AM",
+   "title": "Free Community Thanksgiving Dinner",
    "town": "Franklin"
   },
   {
