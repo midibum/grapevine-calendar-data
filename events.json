@@ -1,5 +1,5 @@
 {
- "count": 72,
+ "count": 69,
  "events": [
   {
    "category": "Community",
@@ -16,57 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Community",
-   "date": "2026-11-25",
-   "desc": "One-day market to stock up for Thanksgiving: fresh seafood, farm eggs, local honey, sweet potatoes, baked goods, jams, jellies, decorated cookies and locally grown produce from several local vendors.",
-   "details": "One-day Thanksgiving market with fresh seafood, farm eggs, local honey, sweet potatoes, baked goods, jams, jellies, decorated cookies and locally grown produce.",
-   "id": "fs-goose-hill-farm-thanksgiving-market-2026",
-   "organizer": "Goose Hill Farm",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/39b2664c51fe.jpg",
-   "photoAi": true,
-   "place": "Goose Hill Farm, 22173 Sedley Road, Franklin, VA",
-   "short": "One-day market to stock up for Thanksgiving: fresh seafood, farm eggs, local honey, sweet potatoes, baked goods, jams, jellies, decorated cookies and locally grown produce.",
-   "sourceName": "Franklin Southampton Economic Development",
-   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/goose-hill-farm-thanksgiving-market/",
-   "time": "12:00 PM – 2:00 PM",
-   "title": "Goose Hill Farm Thanksgiving Market",
-   "town": "Franklin"
-  },
-  {
-   "category": "Fundraiser",
-   "cost": "$15 per Plate",
-   "date": "2026-11-25",
-   "desc": "Let Hunterdale Volunteer Fire Department cook your dinner while you prepare for Thanksgiving. Plates include fried chicken, pork BBQ, green beans, potatoes and a roll. Take out only, first come first served. Starts 4:30 PM; no end time published.",
-   "details": "Plates include fried chicken, pork BBQ, green beans, potatoes and a roll. Take out only, first come first served. Cash, check and credit card accepted. Starts 4:30 PM; no end time published. Station address verified from fire department listings; the flyer does not list an address.",
-   "id": "sw-hunterdale-fried-chicken-pork-bbq-dinner-2026",
-   "organizer": "Hunterdale Volunteer Fire Department",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/68f3c7cda387.jpg",
-   "place": "Hunterdale Volunteer Fire Department, 201 Delaware Rd, Franklin, VA 23851",
-   "short": "Hunterdale Volunteer Fire Department fried chicken and pork BBQ plates, take out only.",
-   "sourceName": "Hunterdale Volunteer Fire Department",
-   "time": "4:30 PM",
-   "title": "16th Annual Fried Chicken and Pork BBQ Dinner",
-   "town": "Franklin"
-  },
-  {
-   "category": "Community",
-   "contact": "757-452-2737",
-   "cost": "Free",
-   "date": "2026-11-25",
-   "desc": "Free medical care every Wednesday. Services: acute illness treatments (colds, ear infections, sinus infections, strep throat), school and sports physicals, vision screenings, health promotion and education, and health assessments.",
-   "details": "Note: The listing's recurring Date/Time line reads 9 AM - 3:30 AM, a typo for 3:30 PM; the Time field reads 9:00 AM - 3:30 PM EST.",
-   "id": "ch-41-odu-community-care-free-medical-care",
-   "organizer": "ODU Community Care",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/2b605aba62a7.jpg",
-   "photoCaption": "Event Graphic created by Whittington Station for this listing. Tap to view full size.",
-   "place": "J. P. King Career and Technical Academy, 501 Charles Street, Franklin, VA",
-   "short": "ODU Community Care - Free",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/odu-community-care-free-medical-care-11-25-2026-5814",
-   "time": "9:00 AM – 3:30 PM",
-   "title": "ODU Community Care - Free Medical Care",
-   "town": "Franklin"
   },
   {
    "category": "Community",
@@ -1243,6 +1192,6 @@
    "worthTheDrive": true
   }
  ],
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "version": 2
 }
