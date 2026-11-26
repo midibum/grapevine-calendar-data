@@ -1,5 +1,5 @@
 {
- "count": 69,
+ "count": 73,
  "events": [
   {
    "category": "Community",
@@ -160,6 +160,24 @@
    "category": "Community",
    "cost": "See organizer",
    "date": "2026-11-28",
+   "desc": "A car-show day at the Speedway hosted by Eastside Empire, with show participants, spectators, VIP guests and vendors welcome.",
+   "details": "A car-show day at Southampton Motor Speedway hosted by Eastside Empire, with show participants, spectators, VIP guests and vendors welcome.",
+   "id": "fs-thanksgiving-throwdown-speedway-2026",
+   "organizer": "Eastside Empire / Southampton Motor Speedway",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/653ba9a360f9ac5f824fcf19a2805bd2.jpg",
+   "photoAi": true,
+   "place": "Southampton Motor Speedway, Capron, VA",
+   "short": "A car-show day at the Speedway hosted by Eastside Empire.",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/thanksgiving-throwdown-at-southampton-motor-speedway/",
+   "time": "11:00 AM",
+   "title": "Thanksgiving Throwdown at Southampton Motor Speedway",
+   "town": "Capron"
+  },
+  {
+   "category": "Community",
+   "cost": "See organizer",
+   "date": "2026-11-28",
    "desc": "A Southern soul homecoming field party.",
    "details": "A Southern soul homecoming field party.",
    "id": "sw-mr-step-outs-field-party",
@@ -184,6 +202,24 @@
    "sourceUrl": "https://fsachamber.chambermaster.com/events/details/small-business-saturday-6188",
    "time": "All day",
    "title": "Small Business Saturday"
+  },
+  {
+   "category": "Parade",
+   "cost": "Free",
+   "date": "2026-11-29",
+   "desc": "A community Christmas parade with a visit from Santa and hot cocoa and cookies, with festivities to follow at the Sedley Firehouse.",
+   "details": "A community Christmas parade with a visit from Santa and hot cocoa and cookies, with festivities to follow at the Sedley Firehouse, 18080 Johnsons Mill Road, Sedley, VA 23878. Organizer: Town of Sedley.",
+   "id": "fs-sedley-christmas-parade-2026",
+   "organizer": "Town of Sedley",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/f78e0ec8a66d6cceaad5e0abb96460ac.jpg",
+   "photoAi": true,
+   "place": "Sedley Firehouse, 18080 Johnsons Mill Road, Sedley, VA 23878",
+   "short": "A community Christmas parade with Santa, hot cocoa and cookies.",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/sedley-christmas-parade/",
+   "time": "4:30 PM",
+   "title": "Sedley Christmas Parade",
+   "town": "Sedley"
   },
   {
    "category": "Festivals & Celebrations",
@@ -367,6 +403,24 @@
    "title": "Market at the Manor",
    "town": "Smithfield",
    "worthTheDrive": true
+  },
+  {
+   "category": "Fundraiser",
+   "cost": "See organizer",
+   "date": "2026-12-05",
+   "desc": "A family-friendly holiday truck show and toy drive with custom trucks, show vehicles, vendors, awards and holiday fun, all supporting a community toy drive.",
+   "details": "A family-friendly holiday truck show and toy drive with custom trucks, show vehicles, vendors, awards and holiday fun, all supporting a community toy drive.",
+   "id": "fs-christmas-bash-toy-drive-speedway-2026",
+   "organizer": "Southampton Motor Speedway",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b663b380bc1b0a95cea4013b272d69f5.jpg",
+   "photoAi": true,
+   "place": "Southampton Motor Speedway, Capron, VA",
+   "short": "A family-friendly holiday truck show and toy drive.",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/christmas-bash-southampton-motor-speedway/",
+   "time": "11:00 AM",
+   "title": "Christmas Bash Toy Drive & Show at Southampton Motor Speedway",
+   "town": "Capron"
   },
   {
    "category": "Parade",
@@ -776,6 +830,24 @@
    "sourceUrl": "https://visitfranklinsouthamptonva.com/event/singing-santa-holiday-brunch-at-serve/",
    "time": "11:00 AM - 1:30 PM",
    "title": "Singing Santa Holiday Brunch at Serve",
+   "town": "Franklin"
+  },
+  {
+   "category": "Community",
+   "cost": "Free",
+   "date": "2026-12-13",
+   "desc": "Free holiday photos with Santa for kids and families in downtown Franklin.",
+   "details": "Free holiday photos with Santa for kids and families at 309 North Main Street, Franklin, VA. Organizer: Your Event Your Way LLC.",
+   "id": "fs-free-pictures-with-santa-2026",
+   "organizer": "Your Event Your Way LLC",
+   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/b582ecde3dc4450022f8a7b1d9856fe2.jpg",
+   "photoAi": true,
+   "place": "309 North Main Street, Franklin, VA",
+   "short": "Free holiday photos with Santa for kids and families.",
+   "sourceName": "Franklin Southampton Economic Development",
+   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/free-pictures-with-santa-franklin-va/",
+   "time": "12:00 PM",
+   "title": "Free Pictures with Santa Claus",
    "town": "Franklin"
   },
   {
