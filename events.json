@@ -1,5 +1,5 @@
 {
- "count": 72,
+ "count": 71,
  "events": [
   {
    "category": "Community",
@@ -332,25 +332,6 @@
    "time": "9:00 AM - 3:00 PM",
    "title": "Hampton Roads Kennel Club December Dog Show & Weight Pull",
    "town": "Courtland"
-  },
-  {
-   "category": "Festivals & Celebrations",
-   "cost": "Free",
-   "date": "2026-12-04",
-   "desc": "Free walk-through Christmas lights display on Bobby and Susan Smith's property. About a quarter-mile path with lighted archways, 200+ inflatables and wire frames, synchronized music, and free hot chocolate at the end. Featured on ABC's The Great Christmas Light Fight. Opening date is TARGET only, Fri Dec 4, weather permitting, not yet officially confirmed.",
-   "details": "Target opening Fri Dec 4, 2026, weather permitting. Official opening date NOT yet confirmed, check before you go. Hours for 2026 not yet confirmed; in past years open nightly 5:45-9 PM. Free admission, always free. Walk-through display, about 1/4 mile. Begins and ends with a nativity scene. All 11 signature driveway arches installed and wrapped with lights.",
-   "drive": "Freeman, VA · about 45 minutes from Franklin",
-   "id": "sw-freeman-lights-2026",
-   "organizer": "Bobby and Susan Smith",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/d579fb7416c01c3ffc81e4db05cacf13.jpg",
-   "photoAi": true,
-   "place": "150 Freemans Pl, Freeman, VA",
-   "short": "Freeman Lights",
-   "sourceName": "Freeman Lights",
-   "time": "Evening",
-   "title": "Freeman Lights Christmas Display",
-   "town": "Freeman",
-   "worthTheDrive": true
   },
   {
    "category": "Market",
