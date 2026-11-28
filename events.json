@@ -1,5 +1,5 @@
 {
- "count": 71,
+ "count": 68,
  "events": [
   {
    "category": "Community",
@@ -16,24 +16,6 @@
    "time": "All day",
    "title": "Operation Cozy",
    "town": "Courtland"
-  },
-  {
-   "category": "Community",
-   "contact": "(757) 284-1773",
-   "date": "2026-11-27",
-   "desc": "Black Friday grand opening for a new local shop with vintage treasures, handmade goods, and one-of-a-kind items from local makers and small businesses.",
-   "details": "Black Friday grand opening for a new local shop with vintage treasures, handmade goods, and one-of-a-kind items from local makers and small businesses. Contact (757) 284-1773.",
-   "id": "fs-hidden-homestead-grand-opening-2026",
-   "organizer": "Hidden Homestead",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/7c2bc36bae28cbd7e5ca58324bde0860.jpg",
-   "photoAi": true,
-   "place": "Hidden Homestead, 109 E. 2nd Avenue, Franklin, VA",
-   "short": "Hidden Homestead Grand Opening",
-   "sourceName": "Franklin Southampton Economic Development",
-   "sourceUrl": "https://visitfranklinsouthamptonva.com/event/hidden-homesteads-grand-opening/",
-   "time": "10:00 AM – 5:00 PM",
-   "title": "Hidden Homestead's Grand Opening",
-   "town": "Franklin"
   },
   {
    "category": "Festivals & Celebrations",
@@ -55,36 +37,6 @@
    "title": "Suffolk Festival of Lights",
    "town": "Suffolk",
    "worthTheDrive": true
-  },
-  {
-   "category": "Concert",
-   "cost": "See organizer",
-   "date": "2026-11-27",
-   "desc": "A benefit concert for the Young Farmers Club with Tamara Wellons performing.",
-   "details": "A benefit concert for the Young Farmers Club with Tamara Wellons performing.",
-   "id": "sw-young-farmers-benefit-concert",
-   "organizer": "Her Dreams Productions",
-   "photo": "https://raw.githubusercontent.com/midibum/grapevine-calendar-data/main/photos/cc99ea1f1131.jpg",
-   "place": "Sportsman Association, 1431 South St, Franklin, VA",
-   "short": "Young Farmers Concert",
-   "sourceName": "Eventbrite",
-   "sourceUrl": "https://www.eventbrite.com/d/va--franklin/events/",
-   "time": "6:00 PM",
-   "title": "Young Farmers Club Benefit Concert featuring Tamara Wellons",
-   "town": "Franklin"
-  },
-  {
-   "category": "Community",
-   "cost": "See organizer",
-   "date": "2026-11-27",
-   "desc": "No further details shown on the Chamber listing - name and date only.",
-   "details": "No further details shown on the Chamber listing - name and date only.",
-   "id": "ch-25-black-friday",
-   "place": "See the Chamber listing for place details",
-   "short": "Black Friday",
-   "sourceUrl": "https://fsachamber.chambermaster.com/events/details/black-friday-6189",
-   "time": "All day",
-   "title": "Black Friday"
   },
   {
    "category": "Community",
@@ -1228,6 +1180,6 @@
    "worthTheDrive": true
   }
  ],
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "version": 2
 }
